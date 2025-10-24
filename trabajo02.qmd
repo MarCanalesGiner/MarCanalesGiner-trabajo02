@@ -1,15 +1,18 @@
 ---
 title: "Trabajo02"
-author: "Mar Canales Giner"
-format: html
-editor: visual
+author: "Mar Canales"
+date: "`r Sys.Date()`"
+format:
+  typst:
+    fig-format: png
+  html: default
 ---
 
 Este año, nos toca **elegir el destino para nuestro viaje de fin de curso**, una decisión que implica considerar múltiples factores, tanto económicos como organizativos y personales.
 
 Dado que se han propuesto varias opciones atractivas, se plantea la necesidad de aplicar un análisis multicriterio que nos permita tomar una decisión objetiva y equilibrada.
 
-El objetivo del presente estudio es determinar cuál es el destino más adecuado para el viaje de fin de curso utilizando distintas metodologías de decisión multicriterio: **ELECTRE, PROMETHEE y AHP**, implementadas en R.
+El objetivo del presente estudio es determinar cuál es el destino más adecuado para el viaje de fin de curso utilizando distintas metodologías de decisión multicriterio implementadas en R.
 
 Las alternativas consideradas son las siguientes:
 
@@ -41,15 +44,16 @@ Y consideremos para cada criterio los siguientes pesos: 0.35, 0.1, 0.2, 0.2, 0.1
 
 ```{r}
 # Comenzamos cargando las librerías necesarias
-source("https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/master/teoriadecision_funciones_multicriterio.R")
+source("teoriadecision_funciones_multicriterio.R")
 source("https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/master/teoriadecision_funciones_multicriterio_diagram.R")
 source("https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/master/teoriadecision_funciones_multicriterio_utiles.R")
 
 library(kableExtra)
-library(ahp)
 ```
 
-Definimos la matriz y los pesos:
+### MÉTODO ELECTRE
+
+Comenzamos definiendo la matriz y los pesos:
 
 ```{r}
 p = multicriterio.crea.matrizdecision(c(
@@ -66,8 +70,6 @@ p
 
 pesos=c(0.35,0.10,0.20,0.20,0.15) 
 ```
-
-### MÉTODO ELECETRE
 
 ```{r}
 alfa=0.7 
@@ -100,4 +102,20 @@ En consecuencia, el núcleo aproximado, que recordemos que era el conjunto de al
 
 Por tanto, **según el método ELECTRE, el viaje al Caribe se considera la mejor alternativa** para el viaje de fin de curso, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
 
-### 
+### MÉTODO AHP
+
+```{r}
+library(ahp)
+library(formattable)
+
+datos = Load("ModeloTrabajo02.ahp") # archivo con la estructura del problema
+Calculate(datos) # Calcular las prioridades
+Visualize(datos) # Visualizar la jerarquia
+# AnalyzeTable(datos) # Analizar
+# AnalyzeTable(datos, variable = "priority") # Analizar con la otra tabla 
+
+# Lo he dejado comentado porque me daban problemas al hacer la salida a pdf, por tanto exporto foto del resultado:
+# Para exportar una "foto" de la tabla
+export_formattable(AnalyzeTable(datos), file = "tabla.png")
+export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPriority.png")
+```

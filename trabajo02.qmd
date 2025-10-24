@@ -1,0 +1,103 @@
+---
+title: "Trabajo02"
+author: "Mar Canales Giner"
+format: html
+editor: visual
+---
+
+Este año, nos toca **elegir el destino para nuestro viaje de fin de curso**, una decisión que implica considerar múltiples factores, tanto económicos como organizativos y personales.
+
+Dado que se han propuesto varias opciones atractivas, se plantea la necesidad de aplicar un análisis multicriterio que nos permita tomar una decisión objetiva y equilibrada.
+
+El objetivo del presente estudio es determinar cuál es el destino más adecuado para el viaje de fin de curso utilizando distintas metodologías de decisión multicriterio: **ELECTRE, PROMETHEE y AHP**, implementadas en R.
+
+Las alternativas consideradas son las siguientes:
+
+1)        Viaje al Caribe en un resort con todo incluido
+
+2)        Recorrido por España visitando las principales ciudades (Madrid, Barcelona, Valencia, etc.).
+
+3)        Viaje a la India con la finalidad de realizar un voluntariado social y cultural.
+
+4)        Viaje al Sudeste Asiático, recorriendo países como Indonesia, Vietnam o Camboya.
+
+5)        Crucero por las Islas Griegas, con paradas en diferentes destinos turísticos del Mediterráneo.
+
+6)        Interrail por Europa, visitando varias capitales y grandes ciudades europeas.
+
+Para evaluar estas alternativas, hemos establecido cinco criterios de decisión que reflejan los aspectos más relevantes a considerar en la elección del destino:
+
+1)        Costo total del viaje (C1): incluye transporte, alojamiento y actividades. Este criterio debe minimizarse, ya que un menor costo es preferible.
+
+2)        Nivel de organización requerida (C2): mide la facilidad logística del viaje (coordinación, reservas, visados, etc.) teniendo en cuenta que somos un grupo de 20 personas. También se debe minimizar, porque un viaje más fácil de organizar es más conveniente.
+
+3)        Experiencia cultural y conexión con la naturaleza (C3): evalúa el grado en que el destino permite un aprendizaje cultural significativo y una inmersión en entornos naturales únicos. Este criterio considera tanto las oportunidades de interacción con diferentes culturas, tradiciones y formas de vida, como la posibilidad de disfrutar y valorar la naturaleza. Este criterio se maximiza, ya que se valora positivamente un destino que combine cultura y naturaleza de manera enriquecedora.
+
+4)        Diversión y ocio (C4): refleja las oportunidades de entretenimiento, descanso y actividades recreativas disponibles. Se maximiza.
+
+5)        Seguridad del destino (C5): considera la seguridad y los controles asociados al país o la zona (sanidad, estabilidad…). Este criterio se maximiza.
+
+Y consideremos para cada criterio los siguientes pesos: 0.35, 0.1, 0.2, 0.2, 0.15 respectivamente
+
+```{r}
+# Comenzamos cargando las librerías necesarias
+source("https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/master/teoriadecision_funciones_multicriterio.R")
+source("https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/master/teoriadecision_funciones_multicriterio_diagram.R")
+source("https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/master/teoriadecision_funciones_multicriterio_utiles.R")
+
+library(kableExtra)
+library(ahp)
+```
+
+Definimos la matriz y los pesos:
+
+```{r}
+p = multicriterio.crea.matrizdecision(c(
+4000, 4, 2, 5, 6, # Caribe
+500, 3, 3, 3, 9, # España
+2200, 1, 5, 2, 3, # India
+3000, 1, 5, 2, 4, # Sudeste Asiático
+1800, 2, 4, 4, 8, # Crucero Islas Griegas
+1500, 2, 4, 5, 9 # Interrail
+), numalternativas = 6, numcriterios = 5,
+v.nombresalt = c("Caribe", "España", "India", "Sudeste Asiático", "Islas Griegas", "Interrail"),
+v.nombrescri = c("Costo", "Organización", "Cultura-Naturaleza", "Diversión", "Seguridad"))
+p
+
+pesos=c(0.35,0.10,0.20,0.20,0.15) 
+```
+
+### MÉTODO ELECETRE
+
+```{r}
+alfa=0.7 
+electre = multicriterio.metodoELECTRE_I(p,pesos.criterios=pesos, 
+                                        nivel.concordancia.minimo.alpha = 0.55, 
+                                        no.se.compensan = c(1500,Inf,4,Inf,8), 
+                                        que.alternativas = TRUE)
+names(electre)
+electre$relacion.dominante
+```
+
+```{r}
+qgraph::qgraph(electre$relacion.dominante) 
+electre$nucleo_aprox
+```
+
+### Conclusión
+
+De acuerdo con el grafo de dominancia obtenido se observa que:
+
+-   Caribe domina a todas las demás alternativas (España, India, Sudeste Asiático, Islas Griegas e Interrail), siendo la opción con mayor dominancia global.
+
+-   Sudeste Asiático y India presentan también cierta fortaleza, dominando a varias alternativas, aunque son superadas por el Caribe.
+
+-   España no domina a ninguna otra alternativa, lo que la posiciona como la opción más débil del conjunto.
+
+-   Islas Griegas y Interrail muestran un comportamiento intermedio: son dominadas por varias opciones, pero aún logran dominar a España.
+
+En consecuencia, el núcleo aproximado, que recordemos que era el conjunto de alternativas no dominadas por ninguna otra, está conformado por el Caribe, pues, sobresale claramente frente a las demás.
+
+Por tanto, **según el método ELECTRE, el viaje al Caribe se considera la mejor alternativa** para el viaje de fin de curso, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
+
+### 

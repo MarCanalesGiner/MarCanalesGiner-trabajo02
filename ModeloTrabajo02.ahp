@@ -1,0 +1,123 @@
+Version: 2.0
+Alternatives: &alternatives
+  Caribe:
+  España:
+  India:
+  SudesteAsiatico:
+  IslasGriegas:
+  Interrail:
+
+Goal:
+  name: Elegir el mejor en destino de viaje de fin de curso
+  preferences:
+    pairwise:
+      - [Costo, Organización, 5]
+      - [Costo, CulturaNaturaleza, 2]
+      - [Costo, Diversión, 2]
+      - [Costo, Seguridad, 3]
+      - [Organización, CulturaNaturaleza, 1/3]
+      - [Organización, Diversión, 1/3]
+      - [Organización, Seguridad, 1/2]
+      - [CulturaNaturaleza, Diversión, 1]
+      - [CulturaNaturaleza, Seguridad, 2]
+      - [Diversión, Seguridad, 2]
+  children:
+    Costo:
+      preferences:
+        pairwise:
+          - [Caribe, España, 1/7]
+          - [Caribe, India, 1/5]
+          - [Caribe, SudesteAsiatico, 1/3]
+          - [Caribe, IslasGriegas, 1/5]
+          - [Caribe, Interrail, 1/5]
+          - [España, India, 5]
+          - [España, SudesteAsiatico, 7]
+          - [España, IslasGriegas, 3]
+          - [España, Interrail, 3]
+          - [India, SudesteAsiatico, 1]
+          - [India, IslasGriegas, 1/3]
+          - [India, Interrail, 1/3]
+          - [SudesteAsiatico, IslasGriegas, 1/5]
+          - [SudesteAsiatico, Interrail, 1/5]
+          - [IslasGriegas, Interrail, 1]
+      children: *alternatives
+
+    Organización:
+      preferences:
+        pairwise:
+          - [Caribe, España, 1/3]
+          - [Caribe, India, 3]
+          - [Caribe, SudesteAsiatico, 3]
+          - [Caribe, IslasGriegas, 2]
+          - [Caribe, Interrail, 2]
+          - [España, India, 5]
+          - [España, SudesteAsiatico, 5]
+          - [España, IslasGriegas, 3]
+          - [España, Interrail, 3]
+          - [India, SudesteAsiatico, 1]
+          - [India, IslasGriegas, 1/3]
+          - [India, Interrail, 1/3]
+          - [SudesteAsiatico, IslasGriegas, 1/3]
+          - [SudesteAsiatico, Interrail, 1/3]
+          - [IslasGriegas, Interrail, 1]
+      children: *alternatives
+
+    CulturaNaturaleza:
+      preferences:
+        pairwise:
+          - [Caribe, España, 3]
+          - [Caribe, India, 1/5]
+          - [Caribe, SudesteAsiatico, 1/5]
+          - [Caribe, IslasGriegas, 1/2]
+          - [Caribe, Interrail, 1/3]
+          - [España, India, 1/7]
+          - [España, SudesteAsiatico, 1/7]
+          - [España, IslasGriegas, 1/5]
+          - [España, Interrail, 1/5]
+          - [India, SudesteAsiatico, 1]
+          - [India, IslasGriegas, 3]
+          - [India, Interrail, 3]
+          - [SudesteAsiatico, IslasGriegas, 3]
+          - [SudesteAsiatico, Interrail, 3]
+          - [IslasGriegas, Interrail, 1]
+      children: *alternatives
+
+    Diversión:
+      preferences:
+        pairwise:
+          - [Caribe, España, 5]
+          - [Caribe, India, 3]
+          - [Caribe, SudesteAsiatico, 3]
+          - [Caribe, IslasGriegas, 2]
+          - [Caribe, Interrail, 2]
+          - [España, India, 1/3]
+          - [España, SudesteAsiatico, 1/3]
+          - [España, IslasGriegas, 1/5]
+          - [España, Interrail, 1/5]
+          - [India, SudesteAsiatico, 1]
+          - [India, IslasGriegas, 1/3]
+          - [India, Interrail, 1/3]
+          - [SudesteAsiatico, IslasGriegas, 1/3]
+          - [SudesteAsiatico, Interrail, 1/3]
+          - [IslasGriegas, Interrail, 1]
+      children: *alternatives
+
+    Seguridad:
+      preferences:
+        pairwise:
+          - [Caribe, España, 1/3]
+          - [Caribe, India, 7]
+          - [Caribe, SudesteAsiatico, 5]
+          - [Caribe, IslasGriegas, 1/2]
+          - [Caribe, Interrail, 1/2]
+          - [España, India, 9]
+          - [España, SudesteAsiatico, 7]
+          - [España, IslasGriegas, 3]
+          - [España, Interrail, 3]
+          - [India, SudesteAsiatico, 1]
+          - [India, IslasGriegas, 1/3]
+          - [India, Interrail, 1/3]
+          - [SudesteAsiatico, IslasGriegas, 1/3]
+          - [SudesteAsiatico, Interrail, 1/3]
+          - [IslasGriegas, Interrail, 1]
+      children: *alternatives

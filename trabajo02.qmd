@@ -1,44 +1,44 @@
 ---
-title: "Trabajo02"
+title: "Trabajo02: Elección del viaje de fin de carrera"
 author: "Mar Canales"
 date: "`r Sys.Date()`"
 format:
   typst:
-    fig-format: png
+    toc: true
+    toc-title: "Índice"
   html: default
 ---
 
-Este año, nos toca **elegir el destino para nuestro viaje de fin de curso**, una decisión que implica considerar múltiples factores, tanto económicos como organizativos y personales.
+\newpage
+
+### Enunciado
+
+Este año, nos toca **elegir el destino para nuestro viaje de fin de carrera**, una decisión que implica considerar múltiples factores, tanto económicos como organizativos y personales.
 
 Dado que se han propuesto varias opciones atractivas, se plantea la necesidad de aplicar un análisis multicriterio que nos permita tomar una decisión objetiva y equilibrada.
 
-El objetivo del presente estudio es determinar cuál es el destino más adecuado para el viaje de fin de curso utilizando distintas metodologías de decisión multicriterio implementadas en R.
+El objetivo del presente estudio es determinar cuál es el destino más adecuado para el viaje de fin de carrera utilizando distintas metodologías de decisión multicriterio implementadas en R.
 
 Las alternativas consideradas son las siguientes:
 
-1)        Viaje al Caribe en un resort con todo incluido
-
-2)        Recorrido por España visitando las principales ciudades (Madrid, Barcelona, Valencia, etc.).
-
-3)        Viaje a la India con la finalidad de realizar un voluntariado social y cultural.
-
-4)        Viaje al Sudeste Asiático, recorriendo países como Indonesia, Vietnam o Camboya.
-
-5)        Crucero por las Islas Griegas, con paradas en diferentes destinos turísticos del Mediterráneo.
-
-6)        Interrail por Europa, visitando varias capitales y grandes ciudades europeas.
+1.  Viaje al Caribe en un resort con todo incluido
+2.  Recorrido por España visitando las principales ciudades (Madrid, Barcelona, Valencia, etc.).
+3.  Viaje a la India con la finalidad de realizar un voluntariado social y cultural.
+4.  Viaje al Sudeste Asiático, recorriendo países como Indonesia, Vietnam o Camboya.
+5.  Crucero por las Islas Griegas, con paradas en diferentes destinos turísticos del Mediterráneo.
+6.  Interrail por Europa, visitando varias capitales y grandes ciudades europeas.
 
 Para evaluar estas alternativas, hemos establecido cinco criterios de decisión que reflejan los aspectos más relevantes a considerar en la elección del destino:
 
-1)        Costo total del viaje (C1): incluye transporte, alojamiento y actividades. Este criterio debe minimizarse, ya que un menor costo es preferible.
+1.   Costo total del viaje (C1): incluye transporte, alojamiento y actividades. Este criterio debe minimizarse, ya que un menor costo es preferible.
 
-2)        Nivel de organización requerida (C2): mide la facilidad logística del viaje (coordinación, reservas, visados, etc.) teniendo en cuenta que somos un grupo de 20 personas. También se debe minimizar, porque un viaje más fácil de organizar es más conveniente.
+2.  Nivel de organización requerida (C2): mide la facilidad logística del viaje (coordinación, reservas, visados, etc.) teniendo en cuenta que somos un grupo de 20 personas. También se debe minimizar, porque un viaje más fácil de organizar es más conveniente.
 
-3)        Experiencia cultural y conexión con la naturaleza (C3): evalúa el grado en que el destino permite un aprendizaje cultural significativo y una inmersión en entornos naturales únicos. Este criterio considera tanto las oportunidades de interacción con diferentes culturas, tradiciones y formas de vida, como la posibilidad de disfrutar y valorar la naturaleza. Este criterio se maximiza, ya que se valora positivamente un destino que combine cultura y naturaleza de manera enriquecedora.
+3.  Experiencia cultural y conexión con la naturaleza (C3): evalúa el grado en que el destino permite un aprendizaje cultural significativo y una inmersión en entornos naturales únicos. Este criterio considera tanto las oportunidades de interacción con diferentes culturas, tradiciones y formas de vida, como la posibilidad de disfrutar y valorar la naturaleza. Este criterio se maximiza, ya que se valora positivamente un destino que combine cultura y naturaleza de manera enriquecedora.
 
-4)        Diversión y ocio (C4): refleja las oportunidades de entretenimiento, descanso y actividades recreativas disponibles. Se maximiza.
+4.  Diversión y ocio (C4): refleja las oportunidades de entretenimiento, descanso y actividades recreativas disponibles. Se maximiza.
 
-5)        Seguridad del destino (C5): considera la seguridad y los controles asociados al país o la zona (sanidad, estabilidad…). Este criterio se maximiza.
+5.  Seguridad del destino (C5): considera la seguridad y los controles asociados al país o la zona (sanidad, estabilidad…). Este criterio se maximiza.
 
 Y consideremos para cada criterio los siguientes pesos: 0.35, 0.1, 0.2, 0.2, 0.15 respectivamente
 
@@ -100,7 +100,7 @@ De acuerdo con el grafo de dominancia obtenido se observa que:
 
 En consecuencia, el núcleo aproximado, que recordemos que era el conjunto de alternativas no dominadas por ninguna otra, está conformado por el Caribe, pues, sobresale claramente frente a las demás.
 
-Por tanto, **según el método ELECTRE, el viaje al Caribe se considera la mejor alternativa** para el viaje de fin de curso, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
+Por tanto, **según el método ELECTRE, el viaje al Caribe se considera la mejor alternativa** para el viaje de fin de carrera, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
 
 ### MÉTODO AHP
 
@@ -122,7 +122,7 @@ export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPrio
 
 ### Conclusión
 
-De acuerdo con los resultados obtenidos observamos que **según el método AHP el destino** **más adecuado para el viaje de fin de curso es España**, con un peso global del 25,7 %, seguido de Interrail (18,3 %) e Islas Griegas (18,1 %).
+De acuerdo con los resultados obtenidos observamos que **según el método AHP el destino** **más adecuado para el viaje de fin de carrera es España**, con un peso global del 25,7 %, seguido de Interrail (18,3 %) e Islas Griegas (18,1 %).
 
 El criterio con mayor importancia global es el costo (38,7 %), lo cual refleja que el factor económico será el más determinante en la elección. Le siguen cultura-naturaleza (21,2 %) y diversión (21,2 %), mostrando que los aspectos de experiencia cultural y ocio también tienen un peso significativo. Por el contrario, los criterios seguridad (11,9 %) y organización (6,9 %) tienen menor influencia en la decisión final.
 

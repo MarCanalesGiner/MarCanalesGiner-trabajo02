@@ -119,3 +119,21 @@ Visualize(datos) # Visualizar la jerarquia
 export_formattable(AnalyzeTable(datos), file = "tabla.png")
 export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPriority.png")
 ```
+
+### Conclusión
+
+De acuerdo con los resultados obtenidos observamos que **según el método AHP el destino** **más adecuado para el viaje de fin de curso es España**, con un peso global del 25,7 %, seguido de Interrail (18,3 %) e Islas Griegas (18,1 %).
+
+El criterio con mayor importancia global es el costo (38,7 %), lo cual refleja que el factor económico será el más determinante en la elección. Le siguen cultura-naturaleza (21,2 %) y diversión (21,2 %), mostrando que los aspectos de experiencia cultural y ocio también tienen un peso significativo. Por el contrario, los criterios seguridad (11,9 %) y organización (6,9 %) tienen menor influencia en la decisión final.
+
+En cuanto al desempeño por criterio:
+
+-    España destaca especialmente en los criterios de costo, seguridad y organización, lo que explica su posición como la mejor alternativa global.
+
+-    Interrail y Islas Griegas logran buenas valoraciones equilibradas, aunque sin sobresalir tanto.
+
+-    India y Sudeste Asiático obtienen puntuaciones altas en cultura y naturaleza, pero su mayor costo y la menor seguridad reducen su posición global.
+
+-    Caribe también ofrece un buen equilibrio entre diversión y cultura, pero su elevado costo lo penaliza en el resultado total.
+
+Los valores de inconsistencia son bajos (entre 0,4 % y 5,3 %), lo que indica que las comparaciones realizadas son coherentes y consistentes con la lógica del modelo AHP.

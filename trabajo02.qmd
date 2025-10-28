@@ -11,7 +11,7 @@ format:
 
 \newpage
 
-### Enunciado
+###  Enunciado
 
 Este año, nos toca **elegir el destino para nuestro viaje de fin de carrera**, una decisión que implica considerar múltiples factores, tanto económicos como organizativos y personales.
 
@@ -156,4 +156,10 @@ Escribimos los pesos:
 ```{r}
 pesos.criterios = c(35/100,1/10,2/10,2/10,15/100)
 # sum(pesos.criterios) (comrpuebo que sumen 1)
+tab.fpref = matrix(c(2,1000,0,0,
+                     5, 1, 2.5, 0,
+                     4, 0.5,2.5,0,
+                     4, 1, 2, 0,
+                     4, 0.5, 4,0), ncol=4, byrow=T)
+tab.fpref
 ```

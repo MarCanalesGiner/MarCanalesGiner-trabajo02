@@ -11,7 +11,7 @@ format:
 
 \newpage
 
-###  Enunciado
+### Enunciado
 
 Este año, nos toca **elegir el destino para nuestro viaje de fin de carrera**, una decisión que implica considerar múltiples factores, tanto económicos como organizativos y personales.
 
@@ -86,7 +86,7 @@ qgraph::qgraph(electre$relacion.dominante)
 electre$nucleo_aprox
 ```
 
-### Conclusión
+#### CONCLUSIÓN
 
 De acuerdo con el grafo de dominancia obtenido se observa que:
 
@@ -120,7 +120,7 @@ export_formattable(AnalyzeTable(datos), file = "tabla.png")
 export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPriority.png")
 ```
 
-### Conclusión
+#### CONCLUSIÓN
 
 De acuerdo con los resultados obtenidos observamos que **según el método AHP el destino** **más adecuado para el viaje de fin de carrera es España**, con un peso global del 25,7 %, seguido de Interrail (18,3 %) e Islas Griegas (18,1 %).
 
@@ -155,11 +155,48 @@ Escribimos los pesos:
 
 ```{r}
 pesos.criterios = c(35/100,1/10,2/10,2/10,15/100)
-# sum(pesos.criterios) (comrpuebo que sumen 1)
+# sum(pesos.criterios) (compruebo que sumen 1)
 tab.fpref = matrix(c(2,1000,0,0,
                      5, 1, 2.5, 0,
                      4, 0.5,2.5,0,
                      4, 1, 2, 0,
                      4, 0.5, 4,0), ncol=4, byrow=T)
-tab.fpref
 ```
+
+#### Método Promethee I
+
+```{r}
+tab.Pthee.i = multicriterio.metodo.promethee_i(tabpromethee, pesos.criterios, tab.fpref)
+tab.Pthee.i
+```
+
+##### CONCLUSIÓN
+
+Tras aplicar el método Promethee I se observa que Interrail presenta el flujo entrante más alto y el saliente más bajo, lo que indica que domina de forma clara a la mayoría de las demás opciones. Esto se puede ver a su vez en la tabla de superación. Esto nos sugiere que la alternativa **preferida con el método Promethee I es Interrail**.
+
+En segundo lugar se sitúan España e Islas Griegas que también presentan un buen balance entre dominancia y escasa subordinación.
+
+En cambio, la India sería la siguiente opción, pero esta ya muestra un flujo saliente ligeramente mayor que el flujo entrante.
+
+Por último, encontramos el Sudeste Asiático y el Caribe, pues, muestran flujos netos negativos, lo que significa que son superadas por la mayoría de las demás alternativas, y por tanto, serán menos recomendables.
+
+No obstante, veamos el método Promethee II que es quien me va a permitir ordenar fácilmente las alternativas:
+
+#### Método Promethee II
+
+```{r}
+tab.Pthee.ii = multicriterio.metodo.promethee_ii(tabpromethee, pesos.criterios, tab.fpref)
+tab.Pthee.ii
+```
+
+```{r}
+order(tab.Pthee.ii$vflujos.netos, decreasing=T)
+```
+
+##### CONCLUSIÓN
+
+**Con el método Promethee II concluimos que Interrail sería la alternativa preferida** (al ser la de mayor flujo neto), seguida de las Islas Griegas, España, India, Sudeste Asiático, y por último, el Caribe.
+
+El orden es:
+
+Interrail \> Islas Griegas \> España \> India \> Sudeste Asiático \> Caribe

@@ -30,7 +30,7 @@ Las alternativas consideradas son las siguientes:
 
 Para evaluar estas alternativas, hemos establecido cinco criterios de decisión que reflejan los aspectos más relevantes a considerar en la elección del destino:
 
-1.   Costo total del viaje (C1): incluye transporte, alojamiento y actividades. Este criterio debe minimizarse, ya que un menor costo es preferible.
+1.  Costo total del viaje (C1): incluye transporte, alojamiento y actividades. Este criterio debe minimizarse, ya que un menor costo es preferible.
 
 2.  Nivel de organización requerida (C2): mide la facilidad logística del viaje (coordinación, reservas, visados, etc.) teniendo en cuenta que somos un grupo de 20 personas. También se debe minimizar, porque un viaje más fácil de organizar es más conveniente.
 
@@ -128,12 +128,32 @@ El criterio con mayor importancia global es el costo (38,7 %), lo cual refleja q
 
 En cuanto al desempeño por criterio:
 
--    España destaca especialmente en los criterios de costo, seguridad y organización, lo que explica su posición como la mejor alternativa global.
+-   España destaca especialmente en los criterios de costo, seguridad y organización, lo que explica su posición como la mejor alternativa global.
 
--    Interrail y Islas Griegas logran buenas valoraciones equilibradas, aunque sin sobresalir tanto.
+-   Interrail y Islas Griegas logran buenas valoraciones equilibradas, aunque sin sobresalir tanto.
 
--    India y Sudeste Asiático obtienen puntuaciones altas en cultura y naturaleza, pero su mayor costo y la menor seguridad reducen su posición global.
+-   India y Sudeste Asiático obtienen puntuaciones altas en cultura y naturaleza, pero su mayor costo y la menor seguridad reducen su posición global.
 
--    Caribe también ofrece un buen equilibrio entre diversión y cultura, pero su elevado costo lo penaliza en el resultado total.
+-   Caribe también ofrece un buen equilibrio entre diversión y cultura, pero su elevado costo lo penaliza en el resultado total.
 
 Los valores de inconsistencia son bajos (entre 0,4 % y 5,3 %), lo que indica que las comparaciones realizadas son coherentes y consistentes con la lógica del modelo AHP.
+
+### MÉTODO PROMETHEE
+
+```{r}
+tabpromethee = multicriterio.crea.matrizdecision(c(-4000, -4, 2, 5, 6, # Caribe
+-500, -3, 3, 3, 9, # España
+-2200, -1, 5, 2, 3, # India
+-3000, -1, 5, 2, 4, # Sudeste Asiático
+-1800, -2, 4, 4, 8, # Crucero Islas Griegas
+-1500, -2, 4, 5, 9 # Interrail
+), numalternativas = 6, numcriterios=5, v.nombresalt=c('Caribe','España','India','Sudeste Asiático','Islas griegas','Interrail'), v.nombrescri=c('Coste','Organización','Cultura-Naturaleza','Ocio','Seguridad'))
+tabpromethee
+```
+
+Escribimos los pesos:
+
+```{r}
+pesos.criterios = c(35/100,1/10,2/10,2/10,15/100)
+# sum(pesos.criterios) (comrpuebo que sumen 1)
+```

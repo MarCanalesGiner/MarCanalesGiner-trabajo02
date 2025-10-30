@@ -200,3 +200,18 @@ order(tab.Pthee.ii$vflujos.netos, decreasing=T)
 El orden es:
 
 Interrail \> Islas Griegas \> España \> India \> Sudeste Asiático \> Caribe
+
+### MÉTODO AXIOMÁTICO DE ARROW Y RAYMOND
+
+```{r}
+sejarrow = multicriterio.metodoaxiomatico.ArrowRaymond(p)
+sejarrow
+```
+
+```{r}
+sejarrow$alternativasordenadas
+```
+
+#### Análisis paramétrico o de sensibilidad aplicación Método axiomático de Arrow y Raymond
+
+Estudiamos cómo cambian las ordenaciones de las alternativas para los distintos valores de alfa:

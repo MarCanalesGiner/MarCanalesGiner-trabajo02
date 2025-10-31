@@ -105,12 +105,12 @@ Comenzamos definiendo la matriz y los pesos. Recuerda que como el coste queríam
 
 ```{r}
 p = multicriterio.crea.matrizdecision(c(
--4000, 4, 2, 5, 6, # Caribe
--500, 3, 3, 3, 9, # España
--2200, 1, 5, 2, 3, # India
--3000, 1, 5, 2, 4, # Sudeste Asiático
--1800, 2, 4, 4, 8, # Crucero Islas Griegas
--1500, 2, 4, 5, 9 # Interrail
+-4000, -4, 2, 5, 6, # Caribe
+-500, -3, 3, 3, 9, # España
+-2200, -1, 5, 2, 3, # India
+-3000, -1, 5, 2, 4, # Sudeste Asiático
+-1800, -2, 4, 4, 8, # Crucero Islas Griegas
+-1500, -2, 4, 5, 9 # Interrail
 ), numalternativas = 6, numcriterios = 5,
 v.nombresalt = c("Caribe", "España", "India", "Sudeste Asiático", "Islas Griegas", "Interrail"),
 v.nombrescri = c("Costo", "Organización", "Cultura-Naturaleza", "Diversión", "Seguridad"))
@@ -135,14 +135,14 @@ qgraph::qgraph(electre0$relacion.dominante)
 electre0$nucleo_aprox
 ```
 
-Observamos que tenemos dos elementos en el núcleo, por ello vamos a intentar ver qué obtenemos cambiando el valor de alfa
+Observamos que tenemos tres elementos en el núcleo, por ello vamos a intentar ver qué obtenemos cambiando el valor de alfa
 
 ```{r}
 alfa=0.55 
 electre = multicriterio.metodoELECTRE_I(p,pesos.criterios=pesos, 
                                         nivel.concordancia.minimo.alpha = alfa, 
                                         no.se.compensan = c(1500,Inf,4,Inf,8), 
-                                        que.alternativas = c(2,6))
+                                        que.alternativas = c(2,3,6))
 names(electre)
 electre$relacion.dominante
 ```
@@ -156,9 +156,9 @@ electre$nucleo_aprox
 
 De acuerdo con el grafo de dominancia obtenido se observa que:
 
--   España domina a todas las demás alternativas (Caribe, India, Sudeste Asiático, Islas Griegas e Interrail), siendo la opción con mayor dominancia global.
+-   Interrail domina a todas las demás alternativas (Caribe, India, Sudeste Asiático, Islas Griegas y España), siendo la opción con mayor dominancia global.
 
--   Interrail e Islas Griegas presentan también cierta fortaleza, dominando a varias alternativas, aunque son superadas por España.
+-   España domina a Islas Griegas, pero ambas presentan también cierta fortaleza, dominando a varias alternativas, aunque son superadas por Interrail.
 
 -   India y Sudeste Asiático muestran un comportamiento intermedio: son dominadas por varias opciones, pero aún logran dominar al Caribe.
 
@@ -166,7 +166,7 @@ De acuerdo con el grafo de dominancia obtenido se observa que:
 
 En consecuencia, el núcleo aproximado, que recordemos que era el conjunto de alternativas no dominadas por ninguna otra, está conformado por España, pues, sobresale claramente frente a las demás.
 
-Por tanto, **según el método ELECTRE, el viaje por España se considera la mejor alternativa** para el viaje de fin de carrera, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
+Por tanto, **según el método ELECTRE, el Interrail se considera la mejor alternativa** para el viaje de fin de carrera, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
 
 ### MÉTODO PROMETHEE
 
@@ -185,7 +185,7 @@ Escribimos los pesos globales obtenidos en el método AHP:
 
 ```{r}
 pesos.criterios = pesos
-tab.fpref = matrix(c(2,1000,0,0,
+tab.fpref = matrix(c(2,1000,1,0,
                      5, 1, 2.5, 0,
                      4, 0.5,2.5,0,
                      4, 1, 2, 0,
@@ -207,7 +207,9 @@ Por su parte, España también es incomparable con Islas Griegas, ya que esta ú
 
 La alternativa Islas Griegas se muestra preferida a India, Caribe y Sudeste Asiático, al superarles tanto en su capacidad de dominancia como en menor grado de ser dominada.
 
-A continuación, se observa que India domina a Sudeste Asiático y al Caribe, mientras que Caribe y Sudeste Asiático resultan incomparables entre sí, situándose además como las alternativas menos favorables del conjunto analizado.
+A continuación, se observa que India domina a Sudeste Asiático y al Caribe. Y finalmente, Sudeste Asiático domina al Caribe.
+
+Por ello, el Caribe se sitúa como la alternativa menos favorable del conjunto analizado.
 
 No obstante, veamos el método Promethee II que es quien me va a permitir ordenar de forma total las alternativas:
 

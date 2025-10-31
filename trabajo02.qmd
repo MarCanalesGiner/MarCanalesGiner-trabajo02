@@ -38,9 +38,15 @@ Para evaluar estas alternativas, hemos establecido cinco criterios de decisión 
 
 4.  Diversión y ocio (C4): refleja las oportunidades de entretenimiento, descanso y actividades recreativas disponibles. Se maximiza.
 
-5.  Seguridad del destino (C5): considera la seguridad y los controles asociados al país o la zona (sanidad, estabilidad…). Este criterio se maximiza.
+5.  Este criterio evalúa el nivel general de seguridad que ofrece cada destino, tanto desde el punto de vista sanitario como social o político. Dado que un entorno seguro contribuye positivamente a la experiencia del viaje, este criterio se maximiza.
 
-Y consideremos para cada criterio los siguientes pesos: 0.35, 0.1, 0.2, 0.2, 0.15 respectivamente
+    Para lograr una valoración más detallada, el criterio se descompone en los siguientes subcriterios:
+
+    -    C5.1 Seguridad sanitaria: analiza el acceso a servicios de salud, las condiciones higiénico-sanitarias del destino y la existencia de riesgos sanitarios (enfermedades endémicas, vacunación requerida, calidad del agua, etc.).
+
+    -    C5.2 Seguridad sociopolítica: evalúa la estabilidad del país o región, el nivel de delincuencia, la seguridad ciudadana y la presencia de posibles conflictos o disturbios.
+
+    Ambos subcriterios se consideran relevantes para la elección final, y al ser aspectos que aportan valor al bienestar y tranquilidad del grupo, se maximizan.
 
 ```{r}
 # Comenzamos cargando las librerías necesarias
@@ -51,61 +57,12 @@ source("https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/mast
 library(kableExtra)
 ```
 
-### MÉTODO ELECTRE
-
-Comenzamos definiendo la matriz y los pesos:
-
-```{r}
-p = multicriterio.crea.matrizdecision(c(
-4000, 4, 2, 5, 6, # Caribe
-500, 3, 3, 3, 9, # España
-2200, 1, 5, 2, 3, # India
-3000, 1, 5, 2, 4, # Sudeste Asiático
-1800, 2, 4, 4, 8, # Crucero Islas Griegas
-1500, 2, 4, 5, 9 # Interrail
-), numalternativas = 6, numcriterios = 5,
-v.nombresalt = c("Caribe", "España", "India", "Sudeste Asiático", "Islas Griegas", "Interrail"),
-v.nombrescri = c("Costo", "Organización", "Cultura-Naturaleza", "Diversión", "Seguridad"))
-p
-
-pesos=c(0.35,0.10,0.20,0.20,0.15) 
-```
-
-```{r}
-alfa=0.7 
-electre = multicriterio.metodoELECTRE_I(p,pesos.criterios=pesos, 
-                                        nivel.concordancia.minimo.alpha = 0.55, 
-                                        no.se.compensan = c(1500,Inf,4,Inf,8), 
-                                        que.alternativas = TRUE)
-names(electre)
-electre$relacion.dominante
-```
-
-```{r}
-qgraph::qgraph(electre$relacion.dominante) 
-electre$nucleo_aprox
-```
-
-#### CONCLUSIÓN
-
-De acuerdo con el grafo de dominancia obtenido se observa que:
-
--   Caribe domina a todas las demás alternativas (España, India, Sudeste Asiático, Islas Griegas e Interrail), siendo la opción con mayor dominancia global.
-
--   Sudeste Asiático y India presentan también cierta fortaleza, dominando a varias alternativas, aunque son superadas por el Caribe.
-
--   España no domina a ninguna otra alternativa, lo que la posiciona como la opción más débil del conjunto.
-
--   Islas Griegas y Interrail muestran un comportamiento intermedio: son dominadas por varias opciones, pero aún logran dominar a España.
-
-En consecuencia, el núcleo aproximado, que recordemos que era el conjunto de alternativas no dominadas por ninguna otra, está conformado por el Caribe, pues, sobresale claramente frente a las demás.
-
-Por tanto, **según el método ELECTRE, el viaje al Caribe se considera la mejor alternativa** para el viaje de fin de carrera, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
-
 ### MÉTODO AHP
 
 ```{r}
 library(ahp)
+ahp::RunGUI()
+
 library(formattable)
 
 datos = Load("ModeloTrabajo02.ahp") # archivo con la estructura del problema
@@ -122,9 +79,11 @@ export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPrio
 
 #### CONCLUSIÓN
 
-De acuerdo con los resultados obtenidos observamos que **según el método AHP el destino** **más adecuado para el viaje de fin de carrera es España**, con un peso global del 25,7 %, seguido de Interrail (18,3 %) e Islas Griegas (18,1 %).
+De acuerdo con los resultados obtenidos observamos que **según el método AHP el destino** **más adecuado para el viaje de fin de carrera es España**, con un peso global del 25,9%, seguido de Interrail (19,4%) e Islas Griegas (18,2%).
 
 El criterio con mayor importancia global es el costo (38,7 %), lo cual refleja que el factor económico será el más determinante en la elección. Le siguen cultura-naturaleza (21,2 %) y diversión (21,2 %), mostrando que los aspectos de experiencia cultural y ocio también tienen un peso significativo. Por el contrario, los criterios seguridad (11,9 %) y organización (6,9 %) tienen menor influencia en la decisión final.
+
+Observamos que el criterio de Seguridad estaba dividio en dos subcriterios, pues, la seguridad socio política (66.7%) es dos veces más importante que la seguridad sanitaria (33.3%)
 
 En cuanto al desempeño por criterio:
 
@@ -137,6 +96,77 @@ En cuanto al desempeño por criterio:
 -   Caribe también ofrece un buen equilibrio entre diversión y cultura, pero su elevado costo lo penaliza en el resultado total.
 
 Los valores de inconsistencia son bajos (entre 0,4 % y 5,3 %), lo que indica que las comparaciones realizadas son coherentes y consistentes con la lógica del modelo AHP.
+
+A partir de este punto, se emplearán los pesos globales obtenidos mediante el método AHP para continuar con el análisis multicriterio.
+
+### MÉTODO ELECTRE
+
+Comenzamos definiendo la matriz y los pesos:
+
+```{r}
+p = multicriterio.crea.matrizdecision(c(
+-4000, 4, 2, 5, 6, # Caribe
+-500, 3, 3, 3, 9, # España
+-2200, 1, 5, 2, 3, # India
+-3000, 1, 5, 2, 4, # Sudeste Asiático
+-1800, 2, 4, 4, 8, # Crucero Islas Griegas
+-1500, 2, 4, 5, 9 # Interrail
+), numalternativas = 6, numcriterios = 5,
+v.nombresalt = c("Caribe", "España", "India", "Sudeste Asiático", "Islas Griegas", "Interrail"),
+v.nombrescri = c("Costo", "Organización", "Cultura-Naturaleza", "Diversión", "Seguridad"))
+p
+
+pesos=c(0.388,0.212,0.212,0.119,0.069)
+# su(pesos) (compruebo que sumen 1)
+```
+
+```{r}
+alfa0=0.7 
+electre0 = multicriterio.metodoELECTRE_I(p,pesos.criterios=pesos, 
+                                        nivel.concordancia.minimo.alpha = alfa0, 
+                                        no.se.compensan = c(1500,Inf,4,Inf,8), 
+                                        que.alternativas = TRUE)
+names(electre0)
+electre0$relacion.dominante
+```
+
+```{r}
+qgraph::qgraph(electre$relacion.dominante) 
+electre$nucleo_aprox
+```
+
+Observamos que tenemos dos elementos en el núcleo, por ello vamos a intentar ver qué obtenemos cambiando el valor de alfa
+
+```{r}
+alfa=0.55 
+electre = multicriterio.metodoELECTRE_I(p,pesos.criterios=pesos, 
+                                        nivel.concordancia.minimo.alpha = alfa, 
+                                        no.se.compensan = c(1500,Inf,4,Inf,8), 
+                                        que.alternativas = TRUE)
+names(electre)
+electre$relacion.dominante
+```
+
+```{r}
+qgraph::qgraph(electre$relacion.dominante) 
+electre$nucleo_aprox
+```
+
+#### CONCLUSIÓN
+
+De acuerdo con el grafo de dominancia obtenido se observa que:
+
+-   España domina a todas las demás alternativas (Caribe, India, Sudeste Asiático, Islas Griegas e Interrail), siendo la opción con mayor dominancia global.
+
+-   Interrail e Islas Griegas presentan también cierta fortaleza, dominando a varias alternativas, aunque son superadas por España.
+
+-   India y Sudeste Asiático muestran un comportamiento intermedio: son dominadas por varias opciones, pero aún logran dominar al Caribe.
+
+-   Caribe no domina a ninguna otra alternativa, lo que la posiciona como la opción más débil del conjunto.
+
+En consecuencia, el núcleo aproximado, que recordemos que era el conjunto de alternativas no dominadas por ninguna otra, está conformado por España, pues, sobresale claramente frente a las demás.
+
+Por tanto, **según el método ELECTRE, el viaje por España se considera la mejor alternativa** para el viaje de fin de carrera, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
 
 ### MÉTODO PROMETHEE
 
@@ -151,11 +181,10 @@ tabpromethee = multicriterio.crea.matrizdecision(c(-4000, -4, 2, 5, 6, # Caribe
 tabpromethee
 ```
 
-Escribimos los pesos:
+Escribimos los pesos globales obtenidos en el método AHP:
 
 ```{r}
-pesos.criterios = c(35/100,1/10,2/10,2/10,15/100)
-# sum(pesos.criterios) (compruebo que sumen 1)
+pesos.criterios = pesos
 tab.fpref = matrix(c(2,1000,0,0,
                      5, 1, 2.5, 0,
                      4, 0.5,2.5,0,
@@ -172,15 +201,15 @@ tab.Pthee.i
 
 ##### CONCLUSIÓN
 
-Tras aplicar el método Promethee I se observa que Interrail presenta el flujo entrante más alto y el saliente más bajo, lo que indica que domina de forma clara a la mayoría de las demás opciones. Esto se puede ver a su vez en la tabla de superación. Esto nos sugiere que la alternativa **preferida con el método Promethee I es Interrail**.
+Tras aplicar el **método PROMETHEE I**, se observa que la alternativa **España** presenta el flujo entrante más alto, mientras que el flujo saliente más bajo corresponde a **Interrail**. Esto implica que Interrail es preferida frente a todas las demás alternativas, salvo España, con la cual resulta incomparable, dado que ambas muestran un equilibrio entre sus capacidades de dominar y ser dominadas.
 
-En segundo lugar se sitúan España e Islas Griegas que también presentan un buen balance entre dominancia y escasa subordinación.
+Por su parte, España también es incomparable con Islas Griegas, ya que esta última presenta un flujo saliente menor.
 
-En cambio, la India sería la siguiente opción, pero esta ya muestra un flujo saliente ligeramente mayor que el flujo entrante.
+La alternativa Islas Griegas se muestra preferida a India, Caribe y Sudeste Asiático, al superarles tanto en su capacidad de dominancia como en menor grado de ser dominada.
 
-Por último, encontramos el Sudeste Asiático y el Caribe, pues, muestran flujos netos negativos, lo que significa que son superadas por la mayoría de las demás alternativas, y por tanto, serán menos recomendables.
+A continuación, se observa que India domina a Sudeste Asiático y al Caribe, mientras que Caribe y Sudeste Asiático resultan incomparables entre sí, situándose además como las alternativas menos favorables del conjunto analizado.
 
-No obstante, veamos el método Promethee II que es quien me va a permitir ordenar fácilmente las alternativas:
+No obstante, veamos el método Promethee II que es quien me va a permitir ordenar de forma total las alternativas:
 
 #### Método Promethee II
 
@@ -195,11 +224,11 @@ order(tab.Pthee.ii$vflujos.netos, decreasing=T)
 
 ##### CONCLUSIÓN
 
-**Con el método Promethee II concluimos que Interrail sería la alternativa preferida** (al ser la de mayor flujo neto), seguida de las Islas Griegas, España, India, Sudeste Asiático, y por último, el Caribe.
+**Con el método Promethee II concluimos que Interrail sería la alternativa preferida** (al ser la de mayor flujo neto), seguida de las España, Islas Griegas, India, Sudeste Asiático, y por último, el Caribe.
 
 El orden es:
 
-Interrail \> Islas Griegas \> España \> India \> Sudeste Asiático \> Caribe
+Interrail\> España\> Islas Griegas \> India \> Sudeste Asiático \> Caribe
 
 ### MÉTODO AXIOMÁTICO DE ARROW Y RAYMOND
 

@@ -105,19 +105,44 @@ Goal:
     Seguridad:
       preferences:
         pairwise:
-          - [Caribe, España, 1/3]
-          - [Caribe, India, 7]
-          - [Caribe, SudesteAsiatico, 5]
-          - [Caribe, IslasGriegas, 1/2]
-          - [Caribe, Interrail, 1/2]
-          - [España, India, 9]
-          - [España, SudesteAsiatico, 7]
-          - [España, IslasGriegas, 3]
-          - [España, Interrail, 3]
-          - [India, SudesteAsiatico, 1]
-          - [India, IslasGriegas, 1/3]
-          - [India, Interrail, 1/3]
-          - [SudesteAsiatico, IslasGriegas, 1/3]
-          - [SudesteAsiatico, Interrail, 1/3]
-          - [IslasGriegas, Interrail, 1]
-      children: *alternatives
+          - [SeguridadSanitaria, SeguridadSociopolitica, 1/2]
+      children:
+        SeguridadSanitaria:
+          preferences:
+            pairwise:
+              - [Caribe, España, 1/8]
+              - [Caribe, India, 6]
+              - [Caribe, SudesteAsiatico, 5]
+              - [Caribe, IslasGriegas, 1/4]
+              - [Caribe, Interrail, 1/5]
+              - [España, India, 9]
+              - [España, SudesteAsiatico, 8]
+              - [España, IslasGriegas, 4]
+              - [España, Interrail, 3]
+              - [India, SudesteAsiatico, 1]
+              - [India, IslasGriegas, 1/6]
+              - [India, Interrail, 1/7]
+              - [SudesteAsiatico, IslasGriegas, 1/4]
+              - [SudesteAsiatico, Interrail, 1/5]
+              - [IslasGriegas, Interrail, 1/3]
+          children: *alternatives
+
+        SeguridadSociopolitica:
+          preferences:
+            pairwise:
+              - [Caribe, España, 1/8]
+              - [Caribe, India, 4]
+              - [Caribe, SudesteAsiatico, 4]
+              - [Caribe, IslasGriegas, 1/6]
+              - [Caribe, Interrail, 1/6]
+              - [España, India, 8]
+              - [España, SudesteAsiatico, 8]
+              - [España, IslasGriegas, 4]
+              - [España, Interrail, 2]
+              - [India, SudesteAsiatico, 1]
+              - [India, IslasGriegas, 1/6]
+              - [India, Interrail, 1/7]
+              - [SudesteAsiatico, IslasGriegas, 1/6]
+              - [SudesteAsiatico, Interrail, 1/7]
+              - [IslasGriegas, Interrail, 1/2]
+          children: *alternatives

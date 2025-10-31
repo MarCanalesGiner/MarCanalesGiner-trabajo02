@@ -42,9 +42,9 @@ Para evaluar estas alternativas, hemos establecido cinco criterios de decisión 
 
     Para lograr una valoración más detallada, el criterio se descompone en los siguientes subcriterios:
 
-    -    C5.1 Seguridad sanitaria: analiza el acceso a servicios de salud, las condiciones higiénico-sanitarias del destino y la existencia de riesgos sanitarios (enfermedades endémicas, vacunación requerida, calidad del agua, etc.).
+    -   C5.1 Seguridad sanitaria: analiza el acceso a servicios de salud, las condiciones higiénico-sanitarias del destino y la existencia de riesgos sanitarios (enfermedades endémicas, vacunación requerida, calidad del agua, etc.).
 
-    -    C5.2 Seguridad sociopolítica: evalúa la estabilidad del país o región, el nivel de delincuencia, la seguridad ciudadana y la presencia de posibles conflictos o disturbios.
+    -   C5.2 Seguridad sociopolítica: evalúa la estabilidad del país o región, el nivel de delincuencia, la seguridad ciudadana y la presencia de posibles conflictos o disturbios.
 
     Ambos subcriterios se consideran relevantes para la elección final, y al ser aspectos que aportan valor al bienestar y tranquilidad del grupo, se maximizan.
 
@@ -61,7 +61,7 @@ library(kableExtra)
 
 ```{r}
 library(ahp)
-ahp::RunGUI()
+#ahp::RunGUI()
 
 library(formattable)
 
@@ -101,7 +101,7 @@ A partir de este punto, se emplearán los pesos globales obtenidos mediante el m
 
 ### MÉTODO ELECTRE
 
-Comenzamos definiendo la matriz y los pesos:
+Comenzamos definiendo la matriz y los pesos. Recuerda que como el coste queríamos minimizarlo debemos de cambiarle el signo a los datos correspondientes.
 
 ```{r}
 p = multicriterio.crea.matrizdecision(c(
@@ -117,7 +117,7 @@ v.nombrescri = c("Costo", "Organización", "Cultura-Naturaleza", "Diversión", "
 p
 
 pesos=c(0.388,0.212,0.212,0.119,0.069)
-# su(pesos) (compruebo que sumen 1)
+# sum(pesos) (compruebo que sumen 1)
 ```
 
 ```{r}
@@ -131,8 +131,8 @@ electre0$relacion.dominante
 ```
 
 ```{r}
-qgraph::qgraph(electre$relacion.dominante) 
-electre$nucleo_aprox
+qgraph::qgraph(electre0$relacion.dominante) 
+electre0$nucleo_aprox
 ```
 
 Observamos que tenemos dos elementos en el núcleo, por ello vamos a intentar ver qué obtenemos cambiando el valor de alfa
@@ -142,7 +142,7 @@ alfa=0.55
 electre = multicriterio.metodoELECTRE_I(p,pesos.criterios=pesos, 
                                         nivel.concordancia.minimo.alpha = alfa, 
                                         no.se.compensan = c(1500,Inf,4,Inf,8), 
-                                        que.alternativas = TRUE)
+                                        que.alternativas = c(2,6))
 names(electre)
 electre$relacion.dominante
 ```

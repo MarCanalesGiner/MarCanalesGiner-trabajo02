@@ -59,6 +59,128 @@ library(kableExtra)
 
 ### MÉTODO AHP
 
+El primer método que vamos a estudiar es el método AHP, este podemos implementarlo usando la librería de R ahp o con funciones de R
+
+Resolución con funciones de R:
+
+```{r}
+## NivelCriterios-Subcriterios:
+#Criterios
+XmatrizC1=multicriterio.crea.matrizvaloraciones(c(1,5,2,2,3,
+                                                  1/5,1,1/3,1/3,1/2,
+                                                  1/2,3,1,1,2,
+                                                  1/2,3,1,1,2,
+                                                  1/3,2,1/2,1/2,1),
+                                                  5, c("Costo","Organización","CulturaNaturaleza", "Diversión", "Seguridad"))
+resC1= multicriterio.metodoAHP.variante3.basico(XmatrizC1)
+# Obtenemos los pesos de los criterios
+resC1$valoraciones.ahp
+
+```
+
+```{r}
+#SubCriterios
+XmatrizC2=multicriterio.crea.matrizvaloraciones(c(1,1/2,
+                                                  2,1),
+                                                2,c("Sanitaria","Socio-Política"))
+resC2= multicriterio.metodoAHP.variante3.basico(XmatrizC2)
+resC2$valoraciones.ahp
+```
+
+```{r}
+# Nivel final
+# Costo
+Xmatriz1=multicriterio.crea.matrizvaloraciones(c(1,1/7,1/5,1/3,1/5,1/5,
+                                                 7,1,5,7,3,3,
+                                                 5,1/5,1,1,1/3,1/3,
+                                                 3,1/7,1,1,1/5,1/5,
+                                                 5,1/3,3,5,1,1,
+                                                 5,1/3,3,5,1,1),
+                                               6,c("Caribe","España","India","SudesteAsiatico", "IslasGriegas", "Interrail"))
+res1= multicriterio.metodoAHP.variante3.basico(Xmatriz1)
+res1$valoraciones.ahp
+
+# Organización
+Xmatriz2=multicriterio.crea.matrizvaloraciones(c(1, 1/3, 3, 3, 2, 2,
+                                                 3, 1, 5, 5, 3, 3,
+                                                 1/3, 1/5, 1, 1, 1/3, 1/3,
+                                                 1/3, 1/5, 1, 1, 1/3, 1/3,
+                                                 1/2, 1/3, 3, 3, 1, 1,
+                                                 1/2, 1/3, 3, 3, 1, 1),
+                                               6,c("Caribe","España","India","SudesteAsiatico", "IslasGriegas", "Interrail"))
+res2= multicriterio.metodoAHP.variante3.basico(Xmatriz2)
+res2$valoraciones.ahp
+
+# CulturaNaturaleza
+Xmatriz3=multicriterio.crea.matrizvaloraciones(c(1,3,1/5,1/5,1/2,1/3,
+                                                 1/3, 1, 1/7,1/7,1/5,1/5,
+                                                 5,7,1,1,3,3,
+                                                 5,7,1,1,3,3,
+                                                 2,5,1/3,1/3,1,1,
+                                                 3,5,1/3,1/3,1,1),
+                                               6,c("Caribe","España","India","SudesteAsiatico", "IslasGriegas", "Interrail"))
+res3= multicriterio.metodoAHP.variante3.basico(Xmatriz3)
+res3$valoraciones.ahp
+
+# Diversión
+Xmatriz4=multicriterio.crea.matrizvaloraciones(c(1,   5,    3,    3,    2,    2,
+1/5, 1,    1/3,  1/3,  1/5,  1/5,
+1/3, 3,    1,    1,    1/3,  1/3,
+1/3, 3,    1,    1,    1/3,  1/3,
+1/2, 5,    3,    3,    1,    1,
+1/2, 5,    3,    3,    1,    1), 
+6,c("Caribe","España","India","SudesteAsiatico", "IslasGriegas", "Interrail"))
+res4= multicriterio.metodoAHP.variante3.basico(Xmatriz4)
+res4$valoraciones.ahp
+
+# Seguridad Sanitaria
+Xmatriz5=multicriterio.crea.matrizvaloraciones(c(1,     1/8,   6,    5,    1/4,   1/5,
+8,     1,     9,    8,    4,     3,
+1/6,   1/9,   1,    1,    1/6,   1/7,
+1/5,   1/8,   1,    1,    1/4,   1/5,
+4,     1/4,   6,    4,    1,     1/3,
+5,     1/3,   7,    5,    3,     1), 
+6,c("Caribe","España","India","SudesteAsiatico", "IslasGriegas", "Interrail"))
+res5= multicriterio.metodoAHP.variante3.basico(Xmatriz5)
+res5$valoraciones.ahp
+
+# Seguridad Socio-Política
+Xmatriz6=multicriterio.crea.matrizvaloraciones(c(1,   1/8,   4,    4,    1/6,   1/6,
+8,     1,     8,    8,    4,     2,
+1/4,   1/8,   1,    1,    1/6,   1/7,
+1/4,   1/8,   1,    1,    1/6,   1/7,
+6,     1/4,   6,    6,    1,     1/2,
+6,     1/2,   7,    7,    2,     1), 
+6,c("Caribe","España","India","SudesteAsiatico", "IslasGriegas", "Interrail"))
+res6= multicriterio.metodoAHP.variante3.basico(Xmatriz6)
+res6$valoraciones.ahp
+
+
+```
+
+```{r}
+# Pesos globales
+c1 = 0.3864814         
+c2 = 0.0694261         
+c3 = 0.2121483         
+c4 = 0.2121483         
+c51 = 0.1197959*0.3333333
+c52 = 0.1197959*0.6666667
+crisub = c(c1,c2,c3,c4,c51,c52)
+matper = matrix(c(0.03449, 0.42020, 0.08816, 0.06316, 0.19698, 0.19698,
+                  0.20201, 0.39228, 0.05901, 0.05901, 0.14383, 0.14383,
+                  0.06630, 0.03291, 0.31951, 0.31951, 0.12577, 0.13598,
+                  0.32123, 0.04270, 0.09434, 0.09434, 0.22367, 0.22367,
+                  0.09948, 0.44332, 0.03162, 0.03667, 0.14946, 0.23942,
+                  0.07767, 0.41243, 0.03381, 0.03381, 0.18350, 0.25876),
+                ncol = 6,nrow=6,byrow = T)
+pond.globales = crisub %*% matper
+colnames(pond.globales) = c("Caribe","España","India","SudesteAsiatico", "IslasGriegas", "Interrail")
+pond.globales
+```
+
+Resolución con la librería ahp:
+
 ```{r}
 library(ahp)
 #ahp::RunGUI()
@@ -68,14 +190,22 @@ library(formattable)
 datos = Load("ModeloTrabajo02.ahp") # archivo con la estructura del problema
 Calculate(datos) # Calcular las prioridades
 Visualize(datos) # Visualizar la jerarquia
-# AnalyzeTable(datos) # Analizar
-# AnalyzeTable(datos, variable = "priority") # Analizar con la otra tabla 
-
-# Lo he dejado comentado porque me daban problemas al hacer la salida a pdf, por tanto exporto foto del resultado:
-# Para exportar una "foto" de la tabla
-export_formattable(AnalyzeTable(datos), file = "tabla.png")
-export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPriority.png")
 ```
+
+```{r}
+# Analizamos
+# AnalyzeTable(datos)
+# AnalyzeTable(datos, variable = "priority")
+
+# Lo he dejado comentado porque al exportarlo a pdf se ven mal las tablas
+# Para exportar una "foto" de las tablas usamos los siguientes comandos:
+# export_formattable(AnalyzeTable(datos), file = "tabla.png")
+# export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPriority.png")
+```
+
+![](tabla.png)
+
+![](tablaPriority.png)
 
 #### CONCLUSIÓN
 
@@ -85,7 +215,7 @@ El criterio con mayor importancia global es el costo (38,7 %), lo cual refleja q
 
 Observamos que el criterio de Seguridad estaba dividio en dos subcriterios, pues, la seguridad socio política (66.7%) es dos veces más importante que la seguridad sanitaria (33.3%)
 
-En cuanto al desempeño por criterio:
+En cuanto al desempeño por criterio observamos la tabla de pesos locales:
 
 -   España destaca especialmente en los criterios de costo, seguridad y organización, lo que explica su posición como la mejor alternativa global.
 
@@ -95,36 +225,37 @@ En cuanto al desempeño por criterio:
 
 -   Caribe también ofrece un buen equilibrio entre diversión y cultura, pero su elevado costo lo penaliza en el resultado total.
 
-Los valores de inconsistencia son bajos (entre 0,4 % y 5,3 %), lo que indica que las comparaciones realizadas son coherentes y consistentes con la lógica del modelo AHP.
+Los valores de inconsistencia obtenidos son aceptables en todos los criterios, salvo en Seguridad Sanitaria, donde se alcanza un índice del 10%. No obstante, al encontrarse justo en el límite establecido como admisible, consideramos que puede darse por válido. De lo contrario, sería necesario revisar las comparaciones realizadas para mejorar la coherencia.
+
+En conjunto, podemos concluir que las comparaciones introducidas son coherentes y presentan un nivel de consistencia adecuado para el correcto funcionamiento del modelo AHP.
 
 A partir de este punto, se emplearán los pesos globales obtenidos mediante el método AHP para continuar con el análisis multicriterio.
 
+\newpage
+
 ### MÉTODO ELECTRE
 
-Comenzamos definiendo la matriz y los pesos. Recuerda que como el coste queríamos minimizarlo debemos de cambiarle el signo a los datos correspondientes.
+Comenzamos definiendo la matriz y los pesos. Recuerda que como el coste y la seguridad queríamos minimizarlos debemos de cambiarle el signo a los datos correspondientes.
 
 ```{r}
-p = multicriterio.crea.matrizdecision(c(
--4000, -4, 2, 5, 6, # Caribe
--500, -3, 3, 3, 9, # España
--2200, -1, 5, 2, 3, # India
--3000, -1, 5, 2, 4, # Sudeste Asiático
--1800, -2, 4, 4, 8, # Crucero Islas Griegas
--1500, -2, 4, 5, 9 # Interrail
-), numalternativas = 6, numcriterios = 5,
-v.nombresalt = c("Caribe", "España", "India", "Sudeste Asiático", "Islas Griegas", "Interrail"),
-v.nombrescri = c("Costo", "Organización", "Cultura-Naturaleza", "Diversión", "Seguridad"))
-p
+tab = multicriterio.crea.matrizdecision(c(-4000, -4, 2, 5, 6, 5, # Caribe
+-500, -3, 3, 3, 9, 9, # España
+-2200, -1, 5, 2, 3, 3, # India
+-3000, -1, 5, 2, 4, 2, # Sudeste Asiático
+-1800, -2, 4, 4, 8, 7, # Crucero Islas Griegas
+-1500, -2, 4, 5, 9, 8 # Interrail
+), numalternativas = 6, numcriterios=6, v.nombresalt=c('Caribe','España','India','Sudeste Asiatico','Islas griegas','Interrail'), v.nombrescri=c('Coste','Organización','Cultura-Naturaleza','Ocio','SeguridadSanitaria','SeguridadSocioPolitica'))
 
-pesos=c(0.388,0.212,0.212,0.119,0.069)
+tab
+pesos=c(0.388,0.212,0.212,0.119,0.069*0.3333333, 0.069*0.6666667)
 # sum(pesos) (compruebo que sumen 1)
 ```
 
 ```{r}
 alfa0=0.7 
-electre0 = multicriterio.metodoELECTRE_I(p,pesos.criterios=pesos, 
+electre0 = multicriterio.metodoELECTRE_I(tab,pesos.criterios=pesos, 
                                         nivel.concordancia.minimo.alpha = alfa0, 
-                                        no.se.compensan = c(1500,Inf,4,Inf,8), 
+                                        no.se.compensan = c(1500,Inf,4,Inf,8,8), 
                                         que.alternativas = TRUE)
 names(electre0)
 electre0$relacion.dominante
@@ -135,14 +266,14 @@ qgraph::qgraph(electre0$relacion.dominante)
 electre0$nucleo_aprox
 ```
 
-Observamos que tenemos tres elementos en el núcleo, por ello vamos a intentar ver qué obtenemos cambiando el valor de alfa
+Observamos que tenemos tres elementos en el núcleo: España, India e Interrail. Por ello, vamos a intentar ver qué obtenemos cambiando el valor de alfa
 
 ```{r}
 alfa=0.55 
-electre = multicriterio.metodoELECTRE_I(p,pesos.criterios=pesos, 
+electre = multicriterio.metodoELECTRE_I(tab,pesos.criterios=pesos, 
                                         nivel.concordancia.minimo.alpha = alfa, 
-                                        no.se.compensan = c(1500,Inf,4,Inf,8), 
-                                        que.alternativas = c(2,3,6))
+                                        no.se.compensan = c(1500,Inf,4,Inf,8,8), 
+                                        que.alternativas = TRUE)
 names(electre)
 electre$relacion.dominante
 ```
@@ -158,27 +289,29 @@ De acuerdo con el grafo de dominancia obtenido se observa que:
 
 -   Interrail domina a todas las demás alternativas (Caribe, India, Sudeste Asiático, Islas Griegas y España), siendo la opción con mayor dominancia global.
 
--   España domina a Islas Griegas, pero ambas presentan también cierta fortaleza, dominando a varias alternativas, aunque son superadas por Interrail.
+-   España e Islas Griegas dominan a Sudeste Asiático, India y el Caribe, presentando así cierta fortaleza, pues dominan a varias alternativas, aunque son superadas por Interrail.
 
--   India y Sudeste Asiático muestran un comportamiento intermedio: son dominadas por varias opciones, pero aún logran dominar al Caribe.
+-   India y Sudeste Asiático muestran un comportamiento peor, pues son dominadas por varias opciones, pero aún logran dominar al Caribe.
 
 -   Caribe no domina a ninguna otra alternativa, lo que la posiciona como la opción más débil del conjunto.
 
-En consecuencia, el núcleo aproximado, que recordemos que era el conjunto de alternativas no dominadas por ninguna otra, está conformado por España, pues, sobresale claramente frente a las demás.
+En consecuencia, el núcleo aproximado, está conformado por Interrail, pues, sobresale claramente frente a las demás.
 
 Por tanto, **según el método ELECTRE, el Interrail se considera la mejor alternativa** para el viaje de fin de carrera, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.
+
+\newpage
 
 ### MÉTODO PROMETHEE
 
 ```{r}
-tabpromethee = multicriterio.crea.matrizdecision(c(-4000, -4, 2, 5, 6, # Caribe
--500, -3, 3, 3, 9, # España
--2200, -1, 5, 2, 3, # India
--3000, -1, 5, 2, 4, # Sudeste Asiático
--1800, -2, 4, 4, 8, # Crucero Islas Griegas
--1500, -2, 4, 5, 9 # Interrail
-), numalternativas = 6, numcriterios=5, v.nombresalt=c('Caribe','España','India','Sudeste Asiático','Islas griegas','Interrail'), v.nombrescri=c('Coste','Organización','Cultura-Naturaleza','Ocio','Seguridad'))
-tabpromethee
+tab = multicriterio.crea.matrizdecision(c(-4000, -4, 2, 5, 6, 5, # Caribe
+-500, -3, 3, 3, 9, 9, # España
+-2200, -1, 5, 2, 3, 3, # India
+-3000, -1, 5, 2, 4, 2, # Sudeste Asiático
+-1800, -2, 4, 4, 8, 7, # Crucero Islas Griegas
+-1500, -2, 4, 5, 9, 8 # Interrail
+), numalternativas = 6, numcriterios=6, v.nombresalt=c('Caribe','España','India','Sudeste Asiático','Islas griegas','Interrail'), v.nombrescri=c('Coste','Organización','Cultura-Naturaleza','Ocio','SeguridadSanitaria','SeguridadSocioPolítica'))
+tab
 ```
 
 Escribimos los pesos globales obtenidos en el método AHP:
@@ -189,13 +322,14 @@ tab.fpref = matrix(c(2,1000,1,0,
                      5, 1, 2.5, 0,
                      4, 0.5,2.5,0,
                      4, 1, 2, 0,
+                     4, 0.5, 4,0,
                      4, 0.5, 4,0), ncol=4, byrow=T)
 ```
 
 #### Método Promethee I
 
 ```{r}
-tab.Pthee.i = multicriterio.metodo.promethee_i(tabpromethee, pesos.criterios, tab.fpref)
+tab.Pthee.i = multicriterio.metodo.promethee_i(tab, pesos.criterios, tab.fpref)
 tab.Pthee.i
 ```
 
@@ -216,7 +350,7 @@ No obstante, veamos el método Promethee II que es quien me va a permitir ordena
 #### Método Promethee II
 
 ```{r}
-tab.Pthee.ii = multicriterio.metodo.promethee_ii(tabpromethee, pesos.criterios, tab.fpref)
+tab.Pthee.ii = multicriterio.metodo.promethee_ii(tab, pesos.criterios, tab.fpref)
 tab.Pthee.ii
 ```
 
@@ -232,10 +366,12 @@ El orden es:
 
 Interrail\> España\> Islas Griegas \> India \> Sudeste Asiático \> Caribe
 
+\newpage
+
 ### MÉTODO AXIOMÁTICO DE ARROW Y RAYMOND
 
 ```{r}
-sejarrow = multicriterio.metodoaxiomatico.ArrowRaymond(p)
+sejarrow = multicriterio.metodoaxiomatico.ArrowRaymond(tab)
 sejarrow
 ```
 
@@ -243,6 +379,45 @@ sejarrow
 sejarrow$alternativasordenadas
 ```
 
+##### CONCLUSIÓN
+
+**Con el método axiomático de Arrow y Raymons concluimos que Interrail sería la alternativa preferida** seguida de Islas Griegas, España, India, Sudeste Asiático, y por último, el Caribe.
+
+El orden en este caso es:
+
+Interrail\> Islas Griegas \> España\> India \> Sudeste Asiático \> Caribe
+
 #### Análisis paramétrico o de sensibilidad aplicación Método axiomático de Arrow y Raymond
 
-Estudiamos cómo cambian las ordenaciones de las alternativas para los distintos valores de alfa:
+Estudiamos cómo cambian las ordenaciones de las alternativas si se incrementa un determinado porcentaje las valoraciones de la primera alternativa en todos los criterios:
+
+```{r}
+intalpha = seq(1,2,0.1)
+sols = vector("list",length(intalpha))
+for (i in 1:length(intalpha)) {
+  tab_i = tab
+  tab_i[1,] = tab_i[1,] * intalpha[i]
+  tab_i = multicriterio.metodoaxiomatico.ArrowRaymond(tab_i)
+  sols[[i]] = tab_i$alternativasordenadas
+}
+sols
+
+# ¿Qué posiciones ha tenido "a1" para los distintos valores de alfa?
+posiciones_a1 = rep(NA,length(intalpha))
+for (i in 1:length(intalpha)) {
+  posiciones_a1[i] = which(sols[[i]]=="Caribe")
+}
+posiciones_a1
+ ## [1] 6 6 6 6 6 6 6 6 3 3 1
+# Representar gráficamente estos cambios:
+plot(intalpha,posiciones_a1,type= "l")
+
+```
+
+##### CONCLUSIÓN
+
+El estudio de sensibilidad realizado mediante el método axiomático de Arrow y Raymond muestra cómo la posición del Caribe varía al aumentar progresivamente las valoraciones de la primera alternativa. Durante los primeros incrementos desde 1 a 1.7 (es decir, un 70%), la posición del Caribe se mantiene estable en el último lugar, lo que indica que los cambios pequeños en las valoraciones de la primera alternativa no afectan significativamente su ordenamiento relativo.
+
+Sin embargo, a partir de un incremento superior o igual al 80%, la posición del Caribe mejora notablemente, pasando a 3º lugar y finalmente alcanzando el 1º lugar cuando el incremento es del 100%.
+
+Esto evidencia que el ranking de alternativas es sensible a incrementos considerables en las valoraciones de las opciones.

@@ -206,12 +206,110 @@ Visualize(datos) # Visualizar la jerarquia
 
 ![](tablaPriority.png)
 
-#### JUSTIFICACIÓN VALORACIONES DOS A DOS
+#### JUSTIFICACIÓN VALORACIONES DOS A DOS DE LOS CRITERIOS
 
 -   Costo 5 vs Organización1: El costo es fuertemente preferido sobre la organización porque, al elegir un destino, el precio total del viaje suele ser un factor decisivo que condiciona completamente la viabilidad de la opción. Aunque la organización influye en la comodidad del viaje, el presupuesto determina si la alternativa es accesible o no.
 
--   Costo = 2 Cultura-Naturaleza= 1\
-    El costo es moderadamente más importante que el atractivo cultural y natural. Aunque los aspectos culturales enriquecen la experiencia, los usuarios suelen filtrar opciones primero por precio, y solo dentro de un rango aceptable consideran el contenido cultural.
+-   Costo = 2 vs Cultura-Naturaleza= 1\
+    El costo es débilmente más importante que el atractivo cultural y natural. Aunque los aspectos culturales enriquecen la experiencia, los usuarios suelen filtrar opciones primero por precio.
+
+-   Costo = 2 vs Diversión = 1
+    El costo es débilmente más relevante que la diversión, porque aunque sea el viaje de fin de curso y hayan expectativas muy altas de pasárnoslo bien, si el precio se sale del presupuesto simplemente deja de ser una opción.
+
+-   Costo = 3 vs Seguridad = 1\
+    El costo es preferido frente a la seguridad. Aunque la seguridad es un aspecto relevante, en este contexto se valora que el presupuesto disponible es normalmente la principal restricción en la decisión inicial.
+
+-   Organización = 1 vs Cultura-Naturaleza = 3
+
+    La cultura y naturaleza tienen un peso moderadamente superior a la organización porque un destino atractivo por su entorno y riqueza cultural hace que luego se olvide el trabajo organizativo que hya detrás. La organización influye en la logística, pero no determina el interés principal del viajero.
+
+-   Organización = 1 vs Diversión = 3
+
+    La diversión es preferida sobre la organización porque la percepción general de disfrute del viaje pesa más que la estructura logística.
+
+-   Organización = 1 vs Seguridad = 2
+
+    La seguridad es ligeramente más importante que la organización, ya que un destino seguro proporciona tranquilidad al viajero. Aunque la organización contribuye, un entorno seguro es un requisito más básico para disfrutar del viaje.
+
+-   Cultura-Naturaleza = 1 vs Diversión = 1
+
+    Ambos criterios tienen la misma importancia. Se considera que el atractivo cultural/natural y la disponibilidad de actividades de ocio contribuyen de manera equilibrada a la experiencia general del viaje.
+
+-   Cultura-Naturaleza = 2 vs Seguridad = 1
+
+    La cultura y la naturaleza son ligeramente más importante que la seguridad porque en una situación normal y teniendo en cuenta que dentro de lo que cabe todas las alternativas son destinos seguros, los viajeros suelen basar su elección en el valor paisajístico o cultural del destino.
+
+-   Diversión = 2 vs Seguridad = 1
+
+    La diversión se valora moderadamente por encima de la seguridad porque la motivación del viaje suele estar ligada a disfrutar y realizar actividades distintas, y se asume que los destinos analizados cuentan con niveles de seguridad aceptables.
+
+Para los subcriterios de Seguridad:
+
+-   Seguridad Sanitaria = 1 vs Seguridad Política = 2
+
+    En la elección de un destino, la estabilidad socio-política suele tener un impacto más inmediato sobre la viabilidad del viaje, ya que problemas como conflictos, tensión política, protestas o inseguridad ciudadana pueden alterar directamente la movilidad y la experiencia del grupo. Aunque la seguridad sanitaria es relevante, en la mayoría de destinos existen medidas médicas, seguros y asistencia que mitigan relativamente ese riesgo.
+
+#### JUSTIFICACIÓN VALORACIONES DOS A DOS EJEMPLO PARA EL CRITERIO ORGANIZACIÓN
+
+-   Caribe = 1 vs España = 3
+
+    España es más fácil de organizar que el Caribe, ya que no requiere vuelos transoceánicos, ni visados... Aunque es una zona muy explotada turísticamente para la que se encuentra mucha información a día de hoy en internet, por tanto, el Caribe es ligeramente menos conveniente logísticamente.
+
+-   Caribe = 3 vs India = 1
+
+    El Caribe es moderadamente más fácil de coordinar que India, donde se necesitan más visados, vacunas... Además el idioma también ayuda a la hora de organizar el viaje.
+
+-   Caribe = 3 vs Sudeste Asiático = 1
+
+    Muy parecido a la justificación anterior, el sudeste asiático es una zona con más complicaciones a la hora de viajar, pues, requiere más visados, vacunas, desplazamientos internos... Por ello el Caribe es ligeramente preferida.
+
+-   Caribe = 2 vs Islas Griegas = 1
+
+    El Caribe es algo más sencillo de gestionar que un crucero por las Islas Griegas, que requiere coordinar rutas, horarios de embarque y excursiones organizadas.
+
+-   Caribe = 2 vs Interrail= 1
+
+    El Caribe es algo más fácil de organizar que un Interrail, donde el grupo debe gestionar horarios de trenes, desplazamientos frecuentes y alojamiento en múltiples ciudades.
+
+-   España = 5 vs India = 1
+
+    España es muy superior a India en facilidad logística, ya que India exige visados, vacunas, desplazamientos complejos y adaptación cultural a la hora de buscar restaurantes, hoteles y excursiones.
+
+-   España = 5 vs Sudeste Asiatico = 1
+
+    España es muchísimo más sencilla que el Sudeste Asiático, que implica varios países, vuelos múltiples y barreras idiomáticas.
+
+-   España = 3 vs Islas Griegas = 1
+
+    España es más simple de planificar que un crucero por las Islas Griegas, pues al ser otro país esto nos va a dificultar la organización, así como los horarios del crucero, idioma...
+
+-   España = 3 vs Interrail = 1
+
+    España se organiza mejor que un Interrail, debido a que Interrail implica cambios continuos de alojamiento y transporte, mientras que España permite un itinerario más estable y conocido.
+
+-   India = 1 vs Sudeste Asiático = 1
+
+    Ambas presentan un nivel de organización similar, pues en ambos casos se requiere planificación sanitaria, visados en muchos casos y organización de múltiples actividades.
+
+-   India = 1 vs Islas Griegas = 3
+
+    India es bastante más compleja que un crucero por las Islas Griegas, que suele tener actividades preorganizadas.
+
+-   India = 1 vs Interrail = 3
+
+    India es moderadamnete más difícil de organizar que un Interrail, que aunque móvil, tiene infraestructura más similiar y familiar y planificación accesible en Europa.
+
+-   Sudeste Asiático = 1 vs Islas Griegas = 3
+
+    El Sudeste Asiático es más complicado de coordinar que un crucero por las Islas Griegas, pues Grecia es más similiar a España, hay más información turística y facilidades.
+
+-   Sudeste Asiático = 1 vs Interrail = 3
+
+    El Sudeste Asiático es más difícil de organizar que un Interrail, ya que los desplazamientos son más largos y de nuevo, para el Sudeste Asiático necesitaremos visados, vacunas....
+
+-   Islas Griegas = 1 vs Interrail = 1
+
+    Ambos tienen un nivel de dificultad similar pues, los dos implican movimientos continuos, por ello en cuanto a la facilidad de organización son igualmente preferidos.
 
 #### CONCLUSIÓN
 
@@ -256,6 +354,30 @@ tab
 pesos=c(0.388,0.212,0.212,0.119,0.069*0.3333333, 0.069*0.6666667)
 # sum(pesos) (compruebo que sumen 1)
 ```
+
+#### JUSTIFICACIÓN DE LAS VALORACIONES (ÍDEM PARA LOS SIGUIENTES MÉTODOS)
+
+Explicamos detalladamente para la primer alternativa, el Caribe, las valoraciones realizadas:
+
+-   Coste = -4000: El viaje al Caribe con “todo incluido” se estima como el más costoso de las opciones, debido a vuelos intercontinentales, estancias largas en resorts y alta demanda de temporada. (Fuente: <https://www.onlyuniversity.es/?gad_source=1&gad_campaignid=19929968317&gbraid=0AAAAADQKnalRvRqvzrjeQ_LzkKH4y6vhS&gclid=CjwKCAiAt8bIBhBpEiwAzH1w6aW3_xR8JxP2rTaOx2nzhqnIkQto25t1UgJ4Cy50XrFlSSWhaWtBkRoCriQQAvD_BwE>).
+
+-   Organización = -4: Aunque es relativamente sencillo un resort “todo incluido”, coordinar un grupo de 20 personas en un destino remoto implica trámites migratorios, transporte desde el aeropuerto y logística extra, por lo que es menos fácil que España o Islas Griegas.
+
+-   Cultura-Naturaleza = 2: El Caribe ofrece playas espectaculares pero, en muchos casos, menor inmersión cultural comparado con India o Sudeste Asiático debido a que se suele permanecer en el resort haciendo otro tipo de actividades.
+
+-   Ocio = 5: Alto valor porque los resorts caribeños centran su oferta en ocio, descanso y diversión (deportes acuáticos, espectáculos, animación).
+
+-   Seguridad Sanitaria = 6: Nivel relativamente bueno, con buenos resorts y atención turística, aunque algunos países caribeños tienen infraestructura sanitaria limitada.
+
+-   Seguridad Socio-Política = 5: Buena, pero algunos destinos turísticos presentan niveles de delincuencia o inseguridad moderada frente a Europa.
+
+El resto de valoraciones en las demás alternativas se han realizado de manera análoga siguiendo en el caso del criterio coste la búsqueda de vuelos con la web skyscanner, la agencia de viaje xcape y Tu Fin de Curso de Sevilla.
+
+El criterio organización ha sido valorado más desde la experiencia personal y buscando el plan de vacunación y visados necesarios para cada uno de los lugares de destino.
+
+Por otro lado, los criterios de naturaleza y cultura y ocio han sido valorados atendiendo a varios rankings que he encontrado en internet como el de National Geographic: [https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415](https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415) y <https://www.lasexta.com/viajestic/destinos/estos-son-mejores-destinos-mundo-amantes-ocio-nocturno_20250607684450794c9357775b849b0e.html> respectivamente.
+
+Por último, los criterios de **Seguridad Sanitaria** y **Seguridad Socio-Política** han sido valorados atendiendo a diversos indicadores internacionales sobre estabilidad, sistemas sanitarios y riesgos para viajeros. En concreto, se han tenido en cuenta: los informes globales de seguridad sanitaria de la Organización Mundial de la Salud (OMS), el Global Health Security Index (GHSI), que evalúa la capacidad de los países para prevenir, detectar y responder ante riesgos sanitarios y el Global Peace Index (GPI) que clasifica a los países según estabilidad política, criminalidad, riesgo de conflictos y seguridad para los viajeros. Así como los avisos para viajeros del Ministerio de Asuntos Exteriores de España (MAEC), que identifican el nivel de riesgo en diferentes regiones.
 
 ```{r}
 alfa0=0.7 
@@ -360,7 +482,7 @@ res_fin = multicriterio.metodo.promethee_windows_kableExtra(res_windows)
 res_fin$tabEscenario
 ```
 
-##### CONCLUSIÓN
+#### CONCLUSIÓN
 
 Tras aplicar el **método PROMETHEE I**, se observa que la alternativa **España** presenta el flujo entrante más alto, mientras que el flujo saliente más bajo corresponde a **Interrail**. Esto implica que Interrail es preferida frente a todas las demás alternativas, salvo España, con la cual resulta incomparable, dado que ambas muestran un equilibrio entre sus capacidades de dominar y ser dominadas.
 
@@ -385,7 +507,7 @@ tab.Pthee.ii
 order(tab.Pthee.ii$vflujos.netos, decreasing=T)
 ```
 
-##### CONCLUSIÓN
+#### CONCLUSIÓN
 
 **Con el método Promethee II concluimos que Interrail sería la alternativa preferida** (al ser la de mayor flujo neto), seguida de las España, Islas Griegas, India, Sudeste Asiático, y por último, el Caribe.
 
@@ -441,7 +563,7 @@ plot(intalpha,posiciones_a1,type= "l")
 
 ```
 
-##### CONCLUSIÓN
+#### CONCLUSIÓN
 
 El estudio de sensibilidad realizado mediante el método axiomático de Arrow y Raymond muestra cómo la posición del Caribe varía al aumentar progresivamente las valoraciones de la primera alternativa. Durante los primeros incrementos desde 1 a 1.7 (es decir, un 70%), la posición del Caribe se mantiene estable en el último lugar, lo que indica que los cambios pequeños en las valoraciones de la primera alternativa no afectan significativamente su ordenamiento relativo.
 

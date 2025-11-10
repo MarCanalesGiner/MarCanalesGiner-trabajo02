@@ -3,10 +3,9 @@ title: "Trabajo02: Elección del viaje de fin de carrera"
 author: "Mar Canales"
 date: "`r Sys.Date()`"
 format:
-  typst:
+  html:
     toc: true
     toc-title: "Índice"
-  html: default
 ---
 
 \newpage
@@ -207,6 +206,13 @@ Visualize(datos) # Visualizar la jerarquia
 
 ![](tablaPriority.png)
 
+#### JUSTIFICACIÓN VALORACIONES DOS A DOS
+
+-   Costo 5 vs Organización1: El costo es fuertemente preferido sobre la organización porque, al elegir un destino, el precio total del viaje suele ser un factor decisivo que condiciona completamente la viabilidad de la opción. Aunque la organización influye en la comodidad del viaje, el presupuesto determina si la alternativa es accesible o no.
+
+-   Costo = 2 Cultura-Naturaleza= 1\
+    El costo es moderadamente más importante que el atractivo cultural y natural. Aunque los aspectos culturales enriquecen la experiencia, los usuarios suelen filtrar opciones primero por precio, y solo dentro de un rango aceptable consideran el contenido cultural.
+
 #### CONCLUSIÓN
 
 De acuerdo con los resultados obtenidos observamos que **según el método AHP el destino** **más adecuado para el viaje de fin de carrera es España**, con un peso global del 25,9%, seguido de Interrail (19,4%) e Islas Griegas (18,2%).
@@ -331,6 +337,27 @@ tab.fpref = matrix(c(2,1000,1,0,
 ```{r}
 tab.Pthee.i = multicriterio.metodo.promethee_i(tab, pesos.criterios, tab.fpref)
 tab.Pthee.i
+```
+
+Resolvamos ahora el problema con Promethee Windows:
+
+```{r}
+res_windows = multicriterio.metodo.promethee_windows(tab,tab.fpref,pesos.criterios)
+res_windows
+```
+
+También podemos hacerlo especificando si queremos maximizarlos o minimizarlos:
+
+```{r}
+(res=multicriterio.metodo.promethee_windows(tab,tab.fpref,pesos.criterios,
+                                            fminmax=c("min","min","max","max", "max","max")))
+```
+
+Impresión de los resultados de una forma más elegente:
+
+```{r}
+res_fin = multicriterio.metodo.promethee_windows_kableExtra(res_windows)
+res_fin$tabEscenario
 ```
 
 ##### CONCLUSIÓN

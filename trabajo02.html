@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mar Canales">
+<meta name="dcterms.date" content="2025-11-10">
+
+<title>Trabajo02: Elección del viaje de fin de carrera</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="trabajo02_files/libs/clipboard/clipboard.min.js"></script>
+<script src="trabajo02_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="trabajo02_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="trabajo02_files/libs/quarto-html/popper.min.js"></script>
+<script src="trabajo02_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="trabajo02_files/libs/quarto-html/anchor.min.js"></script>
+<link href="trabajo02_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="trabajo02_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="trabajo02_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="trabajo02_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="trabajo02_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="trabajo02_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="trabajo02_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="trabajo02_files/libs/viz-1.8.2/viz.js"></script>
+
+<link href="trabajo02_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
+<script src="trabajo02_files/libs/grViz-binding-1.0.11/grViz.js"></script>
+
+<script src="trabajo02_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="trabajo02_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#enunciado" id="toc-enunciado" class="nav-link active" data-scroll-target="#enunciado">Enunciado</a></li>
+  <li><a href="#método-ahp" id="toc-método-ahp" class="nav-link" data-scroll-target="#método-ahp">MÉTODO AHP</a></li>
+  <li><a href="#método-electre" id="toc-método-electre" class="nav-link" data-scroll-target="#método-electre">MÉTODO ELECTRE</a></li>
+  <li><a href="#método-promethee" id="toc-método-promethee" class="nav-link" data-scroll-target="#método-promethee">MÉTODO PROMETHEE</a></li>
+  <li><a href="#método-axiomático-de-arrow-y-raymond" id="toc-método-axiomático-de-arrow-y-raymond" class="nav-link" data-scroll-target="#método-axiomático-de-arrow-y-raymond">MÉTODO AXIOMÁTICO DE ARROW Y RAYMOND</a></li>
+  <li><a href="#conclusión-final" id="toc-conclusión-final" class="nav-link" data-scroll-target="#conclusión-final">CONCLUSIÓN FINAL</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="trabajo02.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Trabajo02: Elección del viaje de fin de carrera</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mar Canales </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 10, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div style="page-break-after: always;"></div>
+<section id="enunciado" class="level3">
+<h3 class="anchored" data-anchor-id="enunciado">Enunciado</h3>
+<p>Este año, nos toca <strong>elegir el destino para nuestro viaje de fin de carrera</strong>, una decisión que implica considerar múltiples factores, tanto económicos como organizativos y personales.</p>
+<p>Dado que se han propuesto varias opciones atractivas, se plantea la necesidad de aplicar un análisis multicriterio que nos permita tomar una decisión objetiva y equilibrada.</p>
+<p>El objetivo del presente estudio es determinar cuál es el destino más adecuado para el viaje de fin de carrera utilizando distintas metodologías de decisión multicriterio implementadas en R.</p>
+<p>Las alternativas consideradas son las siguientes:</p>
+<ol type="1">
+<li>Viaje al Caribe en un resort con todo incluido</li>
+<li>Recorrido por España visitando las principales ciudades (Madrid, Barcelona, Valencia, etc.).</li>
+<li>Viaje a la India con la finalidad de realizar un voluntariado social y cultural.</li>
+<li>Viaje al Sudeste Asiático, recorriendo países como Indonesia, Vietnam o Camboya.</li>
+<li>Crucero por las Islas Griegas, con paradas en diferentes destinos turísticos del Mediterráneo.</li>
+<li>Interrail por Europa, visitando varias capitales y grandes ciudades europeas.</li>
+</ol>
+<p>Para evaluar estas alternativas, hemos establecido cinco criterios de decisión que reflejan los aspectos más relevantes a considerar en la elección del destino:</p>
+<ol type="1">
+<li><p>Costo total del viaje (C1): incluye transporte, alojamiento y actividades. Este criterio debe minimizarse, ya que un menor costo es preferible.</p></li>
+<li><p>Nivel de organización requerida (C2): mide la facilidad logística del viaje (coordinación, reservas, visados, etc.) teniendo en cuenta que somos un grupo de 20 personas. También se debe minimizar, porque un viaje más fácil de organizar es más conveniente.</p></li>
+<li><p>Experiencia cultural y conexión con la naturaleza (C3): evalúa el grado en que el destino permite un aprendizaje cultural significativo y una inmersión en entornos naturales únicos. Este criterio considera tanto las oportunidades de interacción con diferentes culturas, tradiciones y formas de vida, como la posibilidad de disfrutar y valorar la naturaleza. Este criterio se maximiza, ya que se valora positivamente un destino que combine cultura y naturaleza de manera enriquecedora.</p></li>
+<li><p>Diversión y ocio (C4): refleja las oportunidades de entretenimiento, descanso y actividades recreativas disponibles. Se maximiza.</p></li>
+<li><p>Este criterio evalúa el nivel general de seguridad que ofrece cada destino, tanto desde el punto de vista sanitario como social o político. Dado que un entorno seguro contribuye positivamente a la experiencia del viaje, este criterio se maximiza.</p>
+<p>Para lograr una valoración más detallada, el criterio se descompone en los siguientes subcriterios:</p>
+<ul>
+<li><p>C5.1 Seguridad sanitaria: analiza el acceso a servicios de salud, las condiciones higiénico-sanitarias del destino y la existencia de riesgos sanitarios (enfermedades endémicas, vacunación requerida, calidad del agua, etc.).</p></li>
+<li><p>C5.2 Seguridad sociopolítica: evalúa la estabilidad del país o región, el nivel de delincuencia, la seguridad ciudadana y la presencia de posibles conflictos o disturbios.</p></li>
+</ul>
+<p>Ambos subcriterios se consideran relevantes para la elección final, y al ser aspectos que aportan valor al bienestar y tranquilidad del grupo, se maximizan.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comenzamos cargando las librerías necesarias</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"teoriadecision_funciones_multicriterio.R"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/master/teoriadecision_funciones_multicriterio_diagram.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Cargando paquete requerido: shape</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/master/teoriadecision_funciones_multicriterio_utiles.R"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="método-ahp" class="level3">
+<h3 class="anchored" data-anchor-id="método-ahp">MÉTODO AHP</h3>
+<p>El primer método que vamos a estudiar es el método AHP, este podemos implementarlo usando la librería de R ahp o con funciones de R</p>
+<p>RESOLUCIÓN CON FUNCIONES DE R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## NivelCriterios-Subcriterios:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Criterios</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>XmatrizC1<span class="ot">=</span><span class="fu">multicriterio.crea.matrizvaloraciones</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                                                  <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                                                  <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                                                  <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                                                  <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                                                  <span class="dv">5</span>, <span class="fu">c</span>(<span class="st">"Costo"</span>,<span class="st">"Organización"</span>,<span class="st">"CulturaNaturaleza"</span>, <span class="st">"Diversión"</span>, <span class="st">"Seguridad"</span>))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>resC1<span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante3.basico</span>(XmatrizC1)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtenemos los pesos de los criterios</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>resC1<span class="sc">$</span>valoraciones.ahp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Costo      Organización CulturaNaturaleza         Diversión 
+        0.3864814         0.0694261         0.2121483         0.2121483 
+        Seguridad 
+        0.1197959 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SubCriterios</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>XmatrizC2<span class="ot">=</span><span class="fu">multicriterio.crea.matrizvaloraciones</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                                  <span class="dv">2</span>,<span class="dv">1</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                                                <span class="dv">2</span>,<span class="fu">c</span>(<span class="st">"Sanitaria"</span>,<span class="st">"Socio-Política"</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>resC2<span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante3.basico</span>(XmatrizC2)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>resC2<span class="sc">$</span>valoraciones.ahp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Sanitaria Socio-Política 
+     0.3333333      0.6666667 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nivel final</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Costo</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Xmatriz1<span class="ot">=</span><span class="fu">multicriterio.crea.matrizvaloraciones</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">3</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>),</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                                               <span class="dv">6</span>,<span class="fu">c</span>(<span class="st">"Caribe"</span>,<span class="st">"España"</span>,<span class="st">"India"</span>,<span class="st">"SudesteAsiatico"</span>, <span class="st">"IslasGriegas"</span>, <span class="st">"Interrail"</span>))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>res1<span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante3.basico</span>(Xmatriz1)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>res1<span class="sc">$</span>valoraciones.ahp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Caribe          España           India SudesteAsiatico    IslasGriegas 
+     0.03449893      0.42020017      0.08816480      0.06316758      0.19698426 
+      Interrail 
+     0.19698426 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Organización</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>Xmatriz2<span class="ot">=</span><span class="fu">multicriterio.crea.matrizvaloraciones</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">3</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                                               <span class="dv">6</span>,<span class="fu">c</span>(<span class="st">"Caribe"</span>,<span class="st">"España"</span>,<span class="st">"India"</span>,<span class="st">"SudesteAsiatico"</span>, <span class="st">"IslasGriegas"</span>, <span class="st">"Interrail"</span>))</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>res2<span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante3.basico</span>(Xmatriz2)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>res2<span class="sc">$</span>valoraciones.ahp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Caribe          España           India SudesteAsiatico    IslasGriegas 
+      0.2020164       0.3922812       0.0590189       0.0590189       0.1438323 
+      Interrail 
+      0.1438323 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CulturaNaturaleza</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>Xmatriz3<span class="ot">=</span><span class="fu">multicriterio.crea.matrizvaloraciones</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                                               <span class="dv">6</span>,<span class="fu">c</span>(<span class="st">"Caribe"</span>,<span class="st">"España"</span>,<span class="st">"India"</span>,<span class="st">"SudesteAsiatico"</span>, <span class="st">"IslasGriegas"</span>, <span class="st">"Interrail"</span>))</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>res3<span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante3.basico</span>(Xmatriz3)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>res3<span class="sc">$</span>valoraciones.ahp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Caribe          España           India SudesteAsiatico    IslasGriegas 
+     0.06630208      0.03291419      0.31951158      0.31951158      0.12577824 
+      Interrail 
+     0.13598232 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Diversión</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Xmatriz4<span class="ot">=</span><span class="fu">multicriterio.crea.matrizvaloraciones</span>(<span class="fu">c</span>(<span class="dv">1</span>,   <span class="dv">5</span>,    <span class="dv">3</span>,    <span class="dv">3</span>,    <span class="dv">2</span>,    <span class="dv">2</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>, <span class="dv">1</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,  <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,  <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,  <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">3</span>,    <span class="dv">1</span>,    <span class="dv">1</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,  <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">3</span>,    <span class="dv">1</span>,    <span class="dv">1</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,  <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">5</span>,    <span class="dv">3</span>,    <span class="dv">3</span>,    <span class="dv">1</span>,    <span class="dv">1</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">5</span>,    <span class="dv">3</span>,    <span class="dv">3</span>,    <span class="dv">1</span>,    <span class="dv">1</span>), </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>,<span class="fu">c</span>(<span class="st">"Caribe"</span>,<span class="st">"España"</span>,<span class="st">"India"</span>,<span class="st">"SudesteAsiatico"</span>, <span class="st">"IslasGriegas"</span>, <span class="st">"Interrail"</span>))</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>res4<span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante3.basico</span>(Xmatriz4)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>res4<span class="sc">$</span>valoraciones.ahp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Caribe          España           India SudesteAsiatico    IslasGriegas 
+     0.32123992      0.04270622      0.09434993      0.09434993      0.22367700 
+      Interrail 
+     0.22367700 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seguridad Sanitaria</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>Xmatriz5<span class="ot">=</span><span class="fu">multicriterio.crea.matrizvaloraciones</span>(<span class="fu">c</span>(<span class="dv">1</span>,     <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>,   <span class="dv">6</span>,    <span class="dv">5</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>,     <span class="dv">1</span>,     <span class="dv">9</span>,    <span class="dv">8</span>,    <span class="dv">4</span>,     <span class="dv">3</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">9</span>,   <span class="dv">1</span>,    <span class="dv">1</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>,   <span class="dv">1</span>,    <span class="dv">1</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>,     <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,   <span class="dv">6</span>,    <span class="dv">4</span>,    <span class="dv">1</span>,     <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>,     <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,   <span class="dv">7</span>,    <span class="dv">5</span>,    <span class="dv">3</span>,     <span class="dv">1</span>), </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>,<span class="fu">c</span>(<span class="st">"Caribe"</span>,<span class="st">"España"</span>,<span class="st">"India"</span>,<span class="st">"SudesteAsiatico"</span>, <span class="st">"IslasGriegas"</span>, <span class="st">"Interrail"</span>))</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>res5<span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante3.basico</span>(Xmatriz5)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>res5<span class="sc">$</span>valoraciones.ahp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Caribe          España           India SudesteAsiatico    IslasGriegas 
+     0.09948788      0.44332726      0.03162415      0.03667280      0.14946132 
+      Interrail 
+     0.23942659 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seguridad Socio-Política</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>Xmatriz6<span class="ot">=</span><span class="fu">multicriterio.crea.matrizvaloraciones</span>(<span class="fu">c</span>(<span class="dv">1</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>,   <span class="dv">4</span>,    <span class="dv">4</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>,     <span class="dv">1</span>,     <span class="dv">8</span>,    <span class="dv">8</span>,    <span class="dv">4</span>,     <span class="dv">2</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>,   <span class="dv">1</span>,    <span class="dv">1</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">8</span>,   <span class="dv">1</span>,    <span class="dv">1</span>,    <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,   <span class="dv">1</span><span class="sc">/</span><span class="dv">7</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>,     <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,   <span class="dv">6</span>,    <span class="dv">6</span>,    <span class="dv">1</span>,     <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>,     <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,   <span class="dv">7</span>,    <span class="dv">7</span>,    <span class="dv">2</span>,     <span class="dv">1</span>), </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>,<span class="fu">c</span>(<span class="st">"Caribe"</span>,<span class="st">"España"</span>,<span class="st">"India"</span>,<span class="st">"SudesteAsiatico"</span>, <span class="st">"IslasGriegas"</span>, <span class="st">"Interrail"</span>))</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>res6<span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.variante3.basico</span>(Xmatriz6)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>res6<span class="sc">$</span>valoraciones.ahp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Caribe          España           India SudesteAsiatico    IslasGriegas 
+     0.07767039      0.41243855      0.03381539      0.03381539      0.18350010 
+      Interrail 
+     0.25876019 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pesos globales</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">=</span> <span class="fl">0.3864814</span>         </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">=</span> <span class="fl">0.0694261</span>         </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>c3 <span class="ot">=</span> <span class="fl">0.2121483</span>         </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>c4 <span class="ot">=</span> <span class="fl">0.2121483</span>         </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>c51 <span class="ot">=</span> <span class="fl">0.1197959</span><span class="sc">*</span><span class="fl">0.3333333</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>c52 <span class="ot">=</span> <span class="fl">0.1197959</span><span class="sc">*</span><span class="fl">0.6666667</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>crisub <span class="ot">=</span> <span class="fu">c</span>(c1,c2,c3,c4,c51,c52)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>matper <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.03449</span>, <span class="fl">0.42020</span>, <span class="fl">0.08816</span>, <span class="fl">0.06316</span>, <span class="fl">0.19698</span>, <span class="fl">0.19698</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.20201</span>, <span class="fl">0.39228</span>, <span class="fl">0.05901</span>, <span class="fl">0.05901</span>, <span class="fl">0.14383</span>, <span class="fl">0.14383</span>,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.06630</span>, <span class="fl">0.03291</span>, <span class="fl">0.31951</span>, <span class="fl">0.31951</span>, <span class="fl">0.12577</span>, <span class="fl">0.13598</span>,</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.32123</span>, <span class="fl">0.04270</span>, <span class="fl">0.09434</span>, <span class="fl">0.09434</span>, <span class="fl">0.22367</span>, <span class="fl">0.22367</span>,</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.09948</span>, <span class="fl">0.44332</span>, <span class="fl">0.03162</span>, <span class="fl">0.03667</span>, <span class="fl">0.14946</span>, <span class="fl">0.23942</span>,</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">0.07767</span>, <span class="fl">0.41243</span>, <span class="fl">0.03381</span>, <span class="fl">0.03381</span>, <span class="fl">0.18350</span>, <span class="fl">0.25876</span>),</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">ncol =</span> <span class="dv">6</span>,<span class="at">nrow=</span><span class="dv">6</span>,<span class="at">byrow =</span> T)</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>pond.globales <span class="ot">=</span> crisub <span class="sc">%*%</span> matper</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pond.globales) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Caribe"</span>,<span class="st">"España"</span>,<span class="st">"India"</span>,<span class="st">"SudesteAsiatico"</span>, <span class="st">"IslasGriegas"</span>, <span class="st">"Interrail"</span>)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>pond.globales</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Caribe    España     India SudesteAsiatico IslasGriegas Interrail
+[1,] 0.1197438 0.2563154 0.1299295       0.1204691     0.180871 0.1926399</code></pre>
+</div>
+</div>
+<p>RESOLUCIÓN CON LA LIBRERÍA AHP:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ahp)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#ahp::RunGUI()</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">Load</span>(<span class="st">"ModeloTrabajo02.ahp"</span>) <span class="co"># archivo con la estructura del problema</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Calculate</span>(datos) <span class="co"># Calcular las prioridades</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Visualize</span>(datos) <span class="co"># Visualizar la jerarquia</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-20411d2afb294c6a54b4" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-20411d2afb294c6a54b4">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"TB\"]\n\n\n\n  \"1\" [label = \"Elegir el mejor en destino de viaje de fin de curso\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"2\" [label = \"Costo\", tooltip = \"priority: 38.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"3\" [label = \"Organización\", tooltip = \"priority: 6.9%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"4\" [label = \"CulturaNaturaleza\", tooltip = \"priority: 21.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"5\" [label = \"Diversión\", tooltip = \"priority: 21.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"6\" [label = \"Seguridad\", tooltip = \"priority: 11.9%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"7\" [label = \"SeguridadSanitaria\", tooltip = \"priority: 33.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"8\" [label = \"SeguridadSociopolitica\", tooltip = \"priority: 66.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"9\" [label = \"Alternatives\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"10\" [label = \"Caribe\", tooltip = \"priority: 3.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"11\" [label = \"España\", tooltip = \"priority: 42.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"12\" [label = \"India\", tooltip = \"priority: 8.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"13\" [label = \"SudesteAsiatico\", tooltip = \"priority: 6.1%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"14\" [label = \"IslasGriegas\", tooltip = \"priority: 19.9%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"15\" [label = \"Interrail\", tooltip = \"priority: 19.9%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"3\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"5\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"6\"->\"8\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"3\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"4\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"7\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"9\"->\"10\" [penwidth = \"2\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"11\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"12\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"13\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"14\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"15\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analizamos</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># AnalyzeTable(datos)</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># AnalyzeTable(datos, variable = "priority")</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Lo he dejado comentado porque al exportarlo a pdf se ven mal las tablas</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Para exportar una "foto" de las tablas usamos los siguientes comandos:</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># export_formattable(AnalyzeTable(datos), file = "tabla.png")</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPriority.png")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="tabla.png" class="img-fluid"></p>
+<p><img src="tablaPriority.png" class="img-fluid"></p>
+<section id="justificación-valoraciones-dos-a-dos-de-los-criterios" class="level4">
+<h4 class="anchored" data-anchor-id="justificación-valoraciones-dos-a-dos-de-los-criterios">JUSTIFICACIÓN VALORACIONES DOS A DOS DE LOS CRITERIOS</h4>
+<ul>
+<li><p>Costo 5 vs Organización1: El costo es fuertemente preferido sobre la organización porque, al elegir un destino, el precio total del viaje suele ser un factor decisivo que condiciona completamente la viabilidad de la opción. Aunque la organización influye en la comodidad del viaje, el presupuesto determina si la alternativa es accesible o no.</p></li>
+<li><p>Costo = 2 vs Cultura-Naturaleza= 1<br>
+El costo es débilmente más importante que el atractivo cultural y natural. Aunque los aspectos culturales enriquecen la experiencia, los usuarios suelen filtrar opciones primero por precio.</p></li>
+<li><p>Costo = 2 vs Diversión = 1 El costo es débilmente más relevante que la diversión, porque aunque sea el viaje de fin de curso y hayan expectativas muy altas de pasárnoslo bien, si el precio se sale del presupuesto simplemente deja de ser una opción.</p></li>
+<li><p>Costo = 3 vs Seguridad = 1<br>
+El costo es preferido frente a la seguridad. Aunque la seguridad es un aspecto relevante, en este contexto se valora que el presupuesto disponible es normalmente la principal restricción en la decisión inicial.</p></li>
+<li><p>Organización = 1 vs Cultura-Naturaleza = 3</p>
+<p>La cultura y naturaleza tienen un peso moderadamente superior a la organización porque un destino atractivo por su entorno y riqueza cultural hace que luego se olvide el trabajo organizativo que hya detrás. La organización influye en la logística, pero no determina el interés principal del viajero.</p></li>
+<li><p>Organización = 1 vs Diversión = 3</p>
+<p>La diversión es preferida sobre la organización porque la percepción general de disfrute del viaje pesa más que la estructura logística.</p></li>
+<li><p>Organización = 1 vs Seguridad = 2</p>
+<p>La seguridad es ligeramente más importante que la organización, ya que un destino seguro proporciona tranquilidad al viajero. Aunque la organización contribuye, un entorno seguro es un requisito más básico para disfrutar del viaje.</p></li>
+<li><p>Cultura-Naturaleza = 1 vs Diversión = 1</p>
+<p>Ambos criterios tienen la misma importancia. Se considera que el atractivo cultural/natural y la disponibilidad de actividades de ocio contribuyen de manera equilibrada a la experiencia general del viaje.</p></li>
+<li><p>Cultura-Naturaleza = 2 vs Seguridad = 1</p>
+<p>La cultura y la naturaleza son ligeramente más importante que la seguridad porque en una situación normal y teniendo en cuenta que dentro de lo que cabe todas las alternativas son destinos seguros, los viajeros suelen basar su elección en el valor paisajístico o cultural del destino.</p></li>
+<li><p>Diversión = 2 vs Seguridad = 1</p>
+<p>La diversión se valora moderadamente por encima de la seguridad porque la motivación del viaje suele estar ligada a disfrutar y realizar actividades distintas, y se asume que los destinos analizados cuentan con niveles de seguridad aceptables.</p></li>
+</ul>
+<p>Para los subcriterios de Seguridad:</p>
+<ul>
+<li><p>Seguridad Sanitaria = 1 vs Seguridad Política = 2</p>
+<p>En la elección de un destino, la estabilidad socio-política suele tener un impacto más inmediato sobre la viabilidad del viaje, ya que problemas como conflictos, tensión política, protestas o inseguridad ciudadana pueden alterar directamente la movilidad y la experiencia del grupo. Aunque la seguridad sanitaria es relevante, en la mayoría de destinos existen medidas médicas, seguros y asistencia que mitigan relativamente ese riesgo.</p></li>
+</ul>
+</section>
+<section id="justificación-valoraciones-dos-a-dos-ejemplo-para-el-criterio-organización" class="level4">
+<h4 class="anchored" data-anchor-id="justificación-valoraciones-dos-a-dos-ejemplo-para-el-criterio-organización">JUSTIFICACIÓN VALORACIONES DOS A DOS EJEMPLO PARA EL CRITERIO ORGANIZACIÓN</h4>
+<ul>
+<li><p>Caribe = 1 vs España = 3</p>
+<p>España es más fácil de organizar que el Caribe, ya que no requiere vuelos transoceánicos, ni visados… Aunque es una zona muy explotada turísticamente para la que se encuentra mucha información a día de hoy en internet, por tanto, el Caribe es ligeramente menos conveniente logísticamente.</p></li>
+<li><p>Caribe = 3 vs India = 1</p>
+<p>El Caribe es moderadamente más fácil de coordinar que India, donde se necesitan más visados, vacunas… Además el idioma también ayuda a la hora de organizar el viaje.</p></li>
+<li><p>Caribe = 3 vs Sudeste Asiático = 1</p>
+<p>Muy parecido a la justificación anterior, el sudeste asiático es una zona con más complicaciones a la hora de viajar, pues, requiere más visados, vacunas, desplazamientos internos… Por ello el Caribe es ligeramente preferida.</p></li>
+<li><p>Caribe = 2 vs Islas Griegas = 1</p>
+<p>El Caribe es algo más sencillo de gestionar que un crucero por las Islas Griegas, que requiere coordinar rutas, horarios de embarque y excursiones organizadas.</p></li>
+<li><p>Caribe = 2 vs Interrail= 1</p>
+<p>El Caribe es algo más fácil de organizar que un Interrail, donde el grupo debe gestionar horarios de trenes, desplazamientos frecuentes y alojamiento en múltiples ciudades.</p></li>
+<li><p>España = 5 vs India = 1</p>
+<p>España es muy superior a India en facilidad logística, ya que India exige visados, vacunas, desplazamientos complejos y adaptación cultural a la hora de buscar restaurantes, hoteles y excursiones.</p></li>
+<li><p>España = 5 vs Sudeste Asiatico = 1</p>
+<p>España es muchísimo más sencilla que el Sudeste Asiático, que implica varios países, vuelos múltiples y barreras idiomáticas.</p></li>
+<li><p>España = 3 vs Islas Griegas = 1</p>
+<p>España es más simple de planificar que un crucero por las Islas Griegas, pues al ser otro país esto nos va a dificultar la organización, así como los horarios del crucero, idioma…</p></li>
+<li><p>España = 3 vs Interrail = 1</p>
+<p>España se organiza mejor que un Interrail, debido a que Interrail implica cambios continuos de alojamiento y transporte, mientras que España permite un itinerario más estable y conocido.</p></li>
+<li><p>India = 1 vs Sudeste Asiático = 1</p>
+<p>Ambas presentan un nivel de organización similar, pues en ambos casos se requiere planificación sanitaria, visados en muchos casos y organización de múltiples actividades.</p></li>
+<li><p>India = 1 vs Islas Griegas = 3</p>
+<p>India es bastante más compleja que un crucero por las Islas Griegas, que suele tener actividades preorganizadas.</p></li>
+<li><p>India = 1 vs Interrail = 3</p>
+<p>India es moderadamnete más difícil de organizar que un Interrail, que aunque móvil, tiene infraestructura más similiar y familiar y planificación accesible en Europa.</p></li>
+<li><p>Sudeste Asiático = 1 vs Islas Griegas = 3</p>
+<p>El Sudeste Asiático es más complicado de coordinar que un crucero por las Islas Griegas, pues Grecia es más similiar a España, hay más información turística y facilidades.</p></li>
+<li><p>Sudeste Asiático = 1 vs Interrail = 3</p>
+<p>El Sudeste Asiático es más difícil de organizar que un Interrail, ya que los desplazamientos son más largos y de nuevo, para el Sudeste Asiático necesitaremos visados, vacunas….</p></li>
+<li><p>Islas Griegas = 1 vs Interrail = 1</p>
+<p>Ambos tienen un nivel de dificultad similar pues, los dos implican movimientos continuos, por ello en cuanto a la facilidad de organización son igualmente preferidos.</p></li>
+</ul>
+</section>
+<section id="conclusión" class="level4">
+<h4 class="anchored" data-anchor-id="conclusión">CONCLUSIÓN</h4>
+<p>De acuerdo con los resultados obtenidos observamos que <strong>según el método AHP el destino</strong> <strong>más adecuado para el viaje de fin de carrera es España</strong>, con un peso global del 25,9%, seguido de Interrail (19,4%) e Islas Griegas (18,2%).</p>
+<p>El criterio con mayor importancia global es el costo (38,7 %), lo cual refleja que el factor económico será el más determinante en la elección. Le siguen cultura-naturaleza (21,2 %) y diversión (21,2 %), mostrando que los aspectos de experiencia cultural y ocio también tienen un peso significativo. Por el contrario, los criterios seguridad (11,9 %) y organización (6,9 %) tienen menor influencia en la decisión final.</p>
+<p>Observamos que el criterio de Seguridad estaba dividio en dos subcriterios, pues, la seguridad socio política (66.7%) es dos veces más importante que la seguridad sanitaria (33.3%)</p>
+<p>En cuanto al desempeño por criterio observamos la tabla de pesos locales:</p>
+<ul>
+<li><p>España destaca especialmente en los criterios de costo, seguridad y organización, lo que explica su posición como la mejor alternativa global.</p></li>
+<li><p>Interrail y Islas Griegas logran buenas valoraciones equilibradas, aunque sin sobresalir tanto.</p></li>
+<li><p>India y Sudeste Asiático obtienen puntuaciones altas en cultura y naturaleza, pero su mayor costo y la menor seguridad reducen su posición global.</p></li>
+<li><p>Caribe también ofrece un buen equilibrio entre diversión y cultura, pero su elevado costo lo penaliza en el resultado total.</p></li>
+</ul>
+<p>Los valores de inconsistencia obtenidos son aceptables en todos los criterios, salvo en Seguridad Sanitaria, donde se alcanza un índice del 10%. No obstante, al encontrarse justo en el límite establecido como admisible, consideramos que puede darse por válido. De lo contrario, sería necesario revisar las comparaciones realizadas para mejorar la coherencia.</p>
+<p>En conjunto, podemos concluir que las comparaciones introducidas son coherentes y presentan un nivel de consistencia adecuado para el correcto funcionamiento del modelo AHP.</p>
+<p>A partir de este punto, se emplearán los pesos globales obtenidos mediante el método AHP para continuar con el análisis multicriterio.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="método-electre" class="level3">
+<h3 class="anchored" data-anchor-id="método-electre">MÉTODO ELECTRE</h3>
+<p>Comenzamos definiendo la matriz y los pesos. Recuerda que como el coste y la seguridad queríamos minimizarlos debemos de cambiarle el signo a los datos correspondientes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4000</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="co"># Caribe</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">500</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="co"># España</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2200</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="co"># India</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">3000</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="co"># Sudeste Asiático</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1800</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="co"># Crucero Islas Griegas</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1500</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">8</span> <span class="co"># Interrail</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>), <span class="at">numalternativas =</span> <span class="dv">6</span>, <span class="at">numcriterios=</span><span class="dv">6</span>, <span class="at">v.nombresalt=</span><span class="fu">c</span>(<span class="st">'Caribe'</span>,<span class="st">'España'</span>,<span class="st">'India'</span>,<span class="st">'Sudeste Asiatico'</span>,<span class="st">'Islas griegas'</span>,<span class="st">'Interrail'</span>), <span class="at">v.nombrescri=</span><span class="fu">c</span>(<span class="st">'Coste'</span>,<span class="st">'Organización'</span>,<span class="st">'Cultura-Naturaleza'</span>,<span class="st">'Ocio'</span>,<span class="st">'SeguridadSanitaria'</span>,<span class="st">'SeguridadSocioPolitica'</span>))</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>tab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Coste Organización Cultura-Naturaleza Ocio SeguridadSanitaria
+Caribe           -4000           -4                  2    5                  6
+España            -500           -3                  3    3                  9
+India            -2200           -1                  5    2                  3
+Sudeste Asiatico -3000           -1                  5    2                  4
+Islas griegas    -1800           -2                  4    4                  8
+Interrail        -1500           -2                  4    5                  9
+                 SeguridadSocioPolitica
+Caribe                                5
+España                                9
+India                                 3
+Sudeste Asiatico                      2
+Islas griegas                         7
+Interrail                             8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>pesos<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.388</span>,<span class="fl">0.212</span>,<span class="fl">0.212</span>,<span class="fl">0.119</span>,<span class="fl">0.069</span><span class="sc">*</span><span class="fl">0.3333333</span>, <span class="fl">0.069</span><span class="sc">*</span><span class="fl">0.6666667</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sum(pesos) (compruebo que sumen 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>alfa0<span class="ot">=</span><span class="fl">0.7</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>electre0 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(tab,<span class="at">pesos.criterios=</span>pesos, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">nivel.concordancia.minimo.alpha =</span> alfa0, </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="dv">1500</span>,<span class="cn">Inf</span>,<span class="dv">4</span>,<span class="cn">Inf</span>,<span class="dv">8</span>,<span class="dv">8</span>), </span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">que.alternativas =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(electre0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "datos"                  "alpha"                  "Imas"                  
+ [4] "Iigual"                 "Imenos"                 "ind.concordancia"      
+ [7] "ind.concordancia.gorro" "test.concordancia"      "test.discordancia"     
+[10] "relacion.dominante"     "nucleo_aprox"          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>electre0<span class="sc">$</span>relacion.dominante</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Caribe España India Sudeste Asiatico Islas griegas Interrail
+Caribe            FALSE  FALSE FALSE            FALSE         FALSE     FALSE
+España             TRUE  FALSE FALSE            FALSE         FALSE     FALSE
+India              TRUE  FALSE FALSE             TRUE         FALSE     FALSE
+Sudeste Asiatico   TRUE  FALSE FALSE            FALSE         FALSE     FALSE
+Islas griegas      TRUE  FALSE FALSE            FALSE         FALSE     FALSE
+Interrail          TRUE  FALSE FALSE            FALSE          TRUE     FALSE</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(electre0<span class="sc">$</span>relacion.dominante) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="trabajo02_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>electre0<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   España     India Interrail 
+        2         3         6 </code></pre>
+</div>
+</div>
+<p>Observamos que tenemos tres elementos en el núcleo: España, India e Interrail. Por ello, vamos a intentar ver qué obtenemos cambiando el valor de alfa</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>alfa<span class="ot">=</span><span class="fl">0.55</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>electre <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(tab,<span class="at">pesos.criterios=</span>pesos, </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">nivel.concordancia.minimo.alpha =</span> alfa, </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="dv">1500</span>,<span class="cn">Inf</span>,<span class="dv">4</span>,<span class="cn">Inf</span>,<span class="dv">8</span>,<span class="dv">8</span>), </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">que.alternativas =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(electre)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "datos"                  "alpha"                  "Imas"                  
+ [4] "Iigual"                 "Imenos"                 "ind.concordancia"      
+ [7] "ind.concordancia.gorro" "test.concordancia"      "test.discordancia"     
+[10] "relacion.dominante"     "nucleo_aprox"          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>electre<span class="sc">$</span>relacion.dominante</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Caribe España India Sudeste Asiatico Islas griegas Interrail
+Caribe            FALSE  FALSE FALSE            FALSE         FALSE     FALSE
+España             TRUE  FALSE  TRUE             TRUE         FALSE     FALSE
+India              TRUE  FALSE FALSE             TRUE         FALSE     FALSE
+Sudeste Asiatico   TRUE  FALSE FALSE            FALSE         FALSE     FALSE
+Islas griegas      TRUE  FALSE  TRUE             TRUE         FALSE     FALSE
+Interrail          TRUE   TRUE  TRUE             TRUE          TRUE     FALSE</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(electre<span class="sc">$</span>relacion.dominante) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
+no ASCII</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="trabajo02_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>electre<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Interrail 
+        6 </code></pre>
+</div>
+</div>
+<section id="justificación-de-las-valoraciones-ídem-para-los-siguientes-métodos" class="level4">
+<h4 class="anchored" data-anchor-id="justificación-de-las-valoraciones-ídem-para-los-siguientes-métodos">JUSTIFICACIÓN DE LAS VALORACIONES (ÍDEM PARA LOS SIGUIENTES MÉTODOS)</h4>
+<p>Explicamos detalladamente para la primer alternativa, el Caribe, las valoraciones realizadas:</p>
+<ul>
+<li><p>Coste = -4000: El viaje al Caribe con “todo incluido” se estima como el más costoso de las opciones, debido a vuelos intercontinentales, estancias largas en resorts y alta demanda de temporada. (Fuente: <a href="https://www.onlyuniversity.es/?gad_source=1&amp;gad_campaignid=19929968317&amp;gbraid=0AAAAADQKnalRvRqvzrjeQ_LzkKH4y6vhS&amp;gclid=CjwKCAiAt8bIBhBpEiwAzH1w6aW3_xR8JxP2rTaOx2nzhqnIkQto25t1UgJ4Cy50XrFlSSWhaWtBkRoCriQQAvD_BwE" class="uri">https://www.onlyuniversity.es/?gad_source=1&amp;gad_campaignid=19929968317&amp;gbraid=0AAAAADQKnalRvRqvzrjeQ_LzkKH4y6vhS&amp;gclid=CjwKCAiAt8bIBhBpEiwAzH1w6aW3_xR8JxP2rTaOx2nzhqnIkQto25t1UgJ4Cy50XrFlSSWhaWtBkRoCriQQAvD_BwE</a>).</p></li>
+<li><p>Organización = -4: Aunque es relativamente sencillo un resort “todo incluido”, coordinar un grupo de 20 personas en un destino remoto implica trámites migratorios, transporte desde el aeropuerto y logística extra, por lo que es menos fácil que España o Islas Griegas.</p></li>
+<li><p>Cultura-Naturaleza = 2: El Caribe ofrece playas espectaculares pero, en muchos casos, menor inmersión cultural comparado con India o Sudeste Asiático debido a que se suele permanecer en el resort haciendo otro tipo de actividades.</p></li>
+<li><p>Ocio = 5: Alto valor porque los resorts caribeños centran su oferta en ocio, descanso y diversión (deportes acuáticos, espectáculos, animación).</p></li>
+<li><p>Seguridad Sanitaria = 6: Nivel relativamente bueno, con buenos resorts y atención turística, aunque algunos países caribeños tienen infraestructura sanitaria limitada.</p></li>
+<li><p>Seguridad Socio-Política = 5: Buena, pero algunos destinos turísticos presentan niveles de delincuencia o inseguridad moderada frente a Europa.</p></li>
+</ul>
+<p>El resto de valoraciones en las demás alternativas se han realizado de manera análoga siguiendo en el caso del criterio coste la búsqueda de vuelos con la web skyscanner, la agencia de viaje xcape y Tu Fin de Curso de Sevilla.</p>
+<p>El criterio organización ha sido valorado más desde la experiencia personal y buscando el plan de vacunación y visados necesarios para cada uno de los lugares de destino.</p>
+<p>Por otro lado, los criterios de naturaleza y cultura y ocio han sido valorados atendiendo a varios rankings que he encontrado en internet como el de National Geographic: <a href="https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415">https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415</a> y <a href="https://www.lasexta.com/viajestic/destinos/estos-son-mejores-destinos-mundo-amantes-ocio-nocturno_20250607684450794c9357775b849b0e.html" class="uri">https://www.lasexta.com/viajestic/destinos/estos-son-mejores-destinos-mundo-amantes-ocio-nocturno_20250607684450794c9357775b849b0e.html</a> respectivamente.</p>
+<p>Por último, los criterios de <strong>Seguridad Sanitaria</strong> y <strong>Seguridad Socio-Política</strong> han sido valorados atendiendo a diversos indicadores internacionales sobre estabilidad, sistemas sanitarios y riesgos para viajeros. En concreto, se han tenido en cuenta: los informes globales de seguridad sanitaria de la Organización Mundial de la Salud (OMS), el Global Health Security Index (GHSI), que evalúa la capacidad de los países para prevenir, detectar y responder ante riesgos sanitarios y el Global Peace Index (GPI) que clasifica a los países según estabilidad política, criminalidad, riesgo de conflictos y seguridad para los viajeros. Así como los avisos para viajeros del Ministerio de Asuntos Exteriores de España (MAEC), que identifican el nivel de riesgo en diferentes regiones.</p>
+</section>
+<section id="conclusión-1" class="level4">
+<h4 class="anchored" data-anchor-id="conclusión-1">CONCLUSIÓN</h4>
+<p>De acuerdo con el grafo de dominancia obtenido se observa que:</p>
+<ul>
+<li><p>Interrail domina a todas las demás alternativas (Caribe, India, Sudeste Asiático, Islas Griegas y España), siendo la opción con mayor dominancia global.</p></li>
+<li><p>España e Islas Griegas dominan a Sudeste Asiático, India y el Caribe, presentando así cierta fortaleza, pues dominan a varias alternativas, aunque son superadas por Interrail.</p></li>
+<li><p>India y Sudeste Asiático muestran un comportamiento peor, pues son dominadas por varias opciones, pero aún logran dominar al Caribe.</p></li>
+<li><p>Caribe no domina a ninguna otra alternativa, lo que la posiciona como la opción más débil del conjunto.</p></li>
+</ul>
+<p>En consecuencia, el núcleo aproximado, está conformado por Interrail, pues, sobresale claramente frente a las demás.</p>
+<p>Por tanto, <strong>según el método ELECTRE, el Interrail se considera la mejor alternativa</strong> para el viaje de fin de carrera, al presentar un equilibrio favorable en la mayoría de los criterios y una posición dominante respecto al resto de destinos analizados.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="método-promethee" class="level3">
+<h3 class="anchored" data-anchor-id="método-promethee">MÉTODO PROMETHEE</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4000</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="co"># Caribe</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">500</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="co"># España</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2200</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="co"># India</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">3000</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="co"># Sudeste Asiático</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1800</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="co"># Crucero Islas Griegas</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1500</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">8</span> <span class="co"># Interrail</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>), <span class="at">numalternativas =</span> <span class="dv">6</span>, <span class="at">numcriterios=</span><span class="dv">6</span>, <span class="at">v.nombresalt=</span><span class="fu">c</span>(<span class="st">'Caribe'</span>,<span class="st">'España'</span>,<span class="st">'India'</span>,<span class="st">'Sudeste Asiático'</span>,<span class="st">'Islas griegas'</span>,<span class="st">'Interrail'</span>), <span class="at">v.nombrescri=</span><span class="fu">c</span>(<span class="st">'Coste'</span>,<span class="st">'Organización'</span>,<span class="st">'Cultura-Naturaleza'</span>,<span class="st">'Ocio'</span>,<span class="st">'SeguridadSanitaria'</span>,<span class="st">'SeguridadSocioPolítica'</span>))</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>tab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Coste Organización Cultura-Naturaleza Ocio SeguridadSanitaria
+Caribe           -4000           -4                  2    5                  6
+España            -500           -3                  3    3                  9
+India            -2200           -1                  5    2                  3
+Sudeste Asiático -3000           -1                  5    2                  4
+Islas griegas    -1800           -2                  4    4                  8
+Interrail        -1500           -2                  4    5                  9
+                 SeguridadSocioPolítica
+Caribe                                5
+España                                9
+India                                 3
+Sudeste Asiático                      2
+Islas griegas                         7
+Interrail                             8</code></pre>
+</div>
+</div>
+<p>Escribimos los pesos globales obtenidos en el método AHP:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pesos.criterios <span class="ot">=</span> pesos</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>tab.fpref <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1000</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">5</span>, <span class="dv">1</span>, <span class="fl">2.5</span>, <span class="dv">0</span>,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>,<span class="fl">2.5</span>,<span class="dv">0</span>,</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>,</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>, <span class="dv">4</span>,<span class="dv">0</span>,</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>, <span class="dv">4</span>,<span class="dv">0</span>), <span class="at">ncol=</span><span class="dv">4</span>, <span class="at">byrow=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="método-promethee-i" class="level4">
+<h4 class="anchored" data-anchor-id="método-promethee-i">Método Promethee I</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>tab.Pthee.i <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_i</span>(tab, pesos.criterios, tab.fpref)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>tab.Pthee.i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$tabla.indices
+                    Caribe    España  India Sudeste Asiático Islas griegas
+Caribe           0.0000000 0.1190000 0.1535           0.1535        0.0000
+España           0.5515000 0.0000000 0.4570           0.4570        0.4225
+India            0.8120000 0.2473333 0.0000           0.0230        0.1060
+Sudeste Asiático 0.4240000 0.2473333 0.0115           0.0000        0.1060
+Islas griegas    0.6698333 0.1060000 0.1880           0.5760        0.0000
+Interrail        0.6698333 0.2250000 0.1880           0.5760        0.0345
+                 Interrail
+Caribe               0.000
+España               0.023
+India                0.106
+Sudeste Asiático     0.106
+Islas griegas        0.000
+Interrail            0.000
+
+$vflujos.ent
+          Caribe           España            India Sudeste Asiático 
+       0.4260000        1.9110000        1.2943333        0.8948333 
+   Islas griegas        Interrail 
+       1.5398333        1.6933333 
+
+$vflujos.sal
+          Caribe           España            India Sudeste Asiático 
+       3.1271667        0.9446667        0.9980000        1.7855000 
+   Islas griegas        Interrail 
+       0.6690000        0.2350000 
+
+$tablarelacionsupera
+                 Caribe España India Sudeste Asiático Islas griegas Interrail
+Caribe              0.5    0.0   0.0              0.0           0.0       0.0
+España              1.0    0.5   1.0              1.0           0.0       0.0
+India               1.0    0.0   0.5              1.0           0.0       0.0
+Sudeste Asiático    1.0    0.0   0.0              0.5           0.0       0.0
+Islas griegas       1.0    0.0   1.0              1.0           0.5       0.0
+Interrail           1.0    0.0   1.0              1.0           1.0       0.5</code></pre>
+</div>
+</div>
+<p>Resolvamos ahora el problema con Promethee Windows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>res_windows <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_windows</span>(tab,tab.fpref,pesos.criterios)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>res_windows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Escenario
+                       Criterio1     Criterio2    Criterio3   Criterio4  
+Pesos                  "0.388"       "0.212"      "0.212"     "0.119"    
+Funciones Preferencias "U-shape (2)" "Linear (5)" "Level (4)" "Level (4)"
+Q: Indiferencia        "1000"        "1"          "0.5"       "1"        
+P: Preferencia         "1"           "2.5"        "2.5"       "2"        
+S: Gausiano            "0"           "0"          "0"         "0"        
+Minimo                 "-4000"       "-4"         "2"         "2"        
+Maximo                 "-500"        "-1"         "5"         "5"        
+Media                  "-2166.67"    "-2.17"      "3.83"      "3.5"      
+Desviacion Tipica      "1111.56"     "1.07"       "1.07"      "1.26"     
+Caribe                 "-4000"       "-4"         "2"         "5"        
+España                 "-500"        "-3"         "3"         "3"        
+India                  "-2200"       "-1"         "5"         "2"        
+Sudeste Asiático       "-3000"       "-1"         "5"         "2"        
+Islas griegas          "-1800"       "-2"         "4"         "4"        
+Interrail              "-1500"       "-2"         "4"         "5"        
+                       Criterio5      Criterio6     
+Pesos                  "0.0229999977" "0.0460000023"
+Funciones Preferencias "Level (4)"    "Level (4)"   
+Q: Indiferencia        "0.5"          "0.5"         
+P: Preferencia         "4"            "4"           
+S: Gausiano            "0"            "0"           
+Minimo                 "3"            "2"           
+Maximo                 "9"            "9"           
+Media                  "6.5"          "5.67"        
+Desviacion Tipica      "2.36"         "2.56"        
+Caribe                 "6"            "5"           
+España                 "9"            "9"           
+India                  "3"            "3"           
+Sudeste Asiático       "4"            "2"           
+Islas griegas          "8"            "7"           
+Interrail              "9"            "8"           
+
+$Acciones
+                 Rango     Phi Phi.mas Phi.menos
+Interrail            1  0.2917  0.3387    0.0470
+España               2  0.1933  0.3822    0.1889
+Islas griegas        3  0.1742  0.3080    0.1338
+India                4  0.0593  0.2589    0.1996
+Sudeste Asiático     5 -0.1781  0.1790    0.3571
+Caribe               6 -0.5402  0.0852    0.6254</code></pre>
+</div>
+</div>
+<p>También podemos hacerlo especificando si queremos maximizarlos o minimizarlos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">res=</span><span class="fu">multicriterio.metodo.promethee_windows</span>(tab,tab.fpref,pesos.criterios,</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">fminmax=</span><span class="fu">c</span>(<span class="st">"min"</span>,<span class="st">"min"</span>,<span class="st">"max"</span>,<span class="st">"max"</span>, <span class="st">"max"</span>,<span class="st">"max"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Escenario
+                       Criterio1     Criterio2    Criterio3   Criterio4  
+Min/Max                "min"         "min"        "max"       "max"      
+Pesos                  "0.388"       "0.212"      "0.212"     "0.119"    
+Funciones Preferencias "U-shape (2)" "Linear (5)" "Level (4)" "Level (4)"
+Q: Indiferencia        "1000"        "1"          "0.5"       "1"        
+P: Preferencia         "1"           "2.5"        "2.5"       "2"        
+S: Gausiano            "0"           "0"          "0"         "0"        
+Minimo                 "500"         "1"          "2"         "2"        
+Maximo                 "4000"        "4"          "5"         "5"        
+Media                  "2166.67"     "2.17"       "3.83"      "3.5"      
+Desviacion Tipica      "1111.56"     "1.07"       "1.07"      "1.26"     
+Caribe                 "4000"        "4"          "2"         "5"        
+España                 "500"         "3"          "3"         "3"        
+India                  "2200"        "1"          "5"         "2"        
+Sudeste Asiático       "3000"        "1"          "5"         "2"        
+Islas griegas          "1800"        "2"          "4"         "4"        
+Interrail              "1500"        "2"          "4"         "5"        
+                       Criterio5      Criterio6     
+Min/Max                "max"          "max"         
+Pesos                  "0.0229999977" "0.0460000023"
+Funciones Preferencias "Level (4)"    "Level (4)"   
+Q: Indiferencia        "0.5"          "0.5"         
+P: Preferencia         "4"            "4"           
+S: Gausiano            "0"            "0"           
+Minimo                 "3"            "2"           
+Maximo                 "9"            "9"           
+Media                  "6.5"          "5.67"        
+Desviacion Tipica      "2.36"         "2.56"        
+Caribe                 "6"            "5"           
+España                 "9"            "9"           
+India                  "3"            "3"           
+Sudeste Asiático       "4"            "2"           
+Islas griegas          "8"            "7"           
+Interrail              "9"            "8"           
+
+$Acciones
+                 Rango     Phi Phi.mas Phi.menos
+Interrail            1  0.2917  0.3387    0.0470
+España               2  0.1933  0.3822    0.1889
+Islas griegas        3  0.1742  0.3080    0.1338
+India                4  0.0593  0.2589    0.1996
+Sudeste Asiático     5 -0.1781  0.1790    0.3571
+Caribe               6 -0.5402  0.0852    0.6254</code></pre>
+</div>
+</div>
+<p>Impresión de los resultados de una forma más elegente:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>res_fin <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_windows_kableExtra</span>(res_windows)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>res_fin<span class="sc">$</span>tabEscenario</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-paper lightable-striped caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio1</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio3</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio4</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio5</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd" data-grouplength="6">
+<td colspan="7" style="border-bottom: 1px solid"><strong>Preferencias</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Pesos</td>
+<td style="text-align: left;">0.388</td>
+<td style="text-align: left;">0.212</td>
+<td style="text-align: left;">0.212</td>
+<td style="text-align: left;">0.119</td>
+<td style="text-align: left;">0.0229999977</td>
+<td style="text-align: left;">0.0460000023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Funciones Preferencias</td>
+<td style="text-align: left;">U-shape (2)</td>
+<td style="text-align: left;">Linear (5)</td>
+<td style="text-align: left;">Level (4)</td>
+<td style="text-align: left;">Level (4)</td>
+<td style="text-align: left;">Level (4)</td>
+<td style="text-align: left;">Level (4)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Q: Indiferencia</td>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">P: Preferencia</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2.5</td>
+<td style="text-align: left;">2.5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">S: Gausiano</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Minimo</td>
+<td style="text-align: left;">-4000</td>
+<td style="text-align: left;">-4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even" data-grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid"><strong>Estadísticas</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Maximo</td>
+<td style="text-align: left;">-500</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Media</td>
+<td style="text-align: left;">-2166.67</td>
+<td style="text-align: left;">-2.17</td>
+<td style="text-align: left;">3.83</td>
+<td style="text-align: left;">3.5</td>
+<td style="text-align: left;">6.5</td>
+<td style="text-align: left;">5.67</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Desviacion Tipica</td>
+<td style="text-align: left;">1111.56</td>
+<td style="text-align: left;">1.07</td>
+<td style="text-align: left;">1.07</td>
+<td style="text-align: left;">1.26</td>
+<td style="text-align: left;">2.36</td>
+<td style="text-align: left;">2.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Caribe</td>
+<td style="text-align: left;">-4000</td>
+<td style="text-align: left;">-4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="odd" data-grouplength="5">
+<td colspan="7" style="border-bottom: 1px solid"><strong>Evaluaciones</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">España</td>
+<td style="text-align: left;">-500</td>
+<td style="text-align: left;">-3</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">India</td>
+<td style="text-align: left;">-2200</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Sudeste Asiático</td>
+<td style="text-align: left;">-3000</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Islas griegas</td>
+<td style="text-align: left;">-1800</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Interrail</td>
+<td style="text-align: left;">-1500</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="conclusión-2" class="level4">
+<h4 class="anchored" data-anchor-id="conclusión-2">CONCLUSIÓN</h4>
+<p>Tras aplicar el <strong>método PROMETHEE I</strong>, se observa que la alternativa <strong>España</strong> presenta el flujo entrante más alto, mientras que el flujo saliente más bajo corresponde a <strong>Interrail</strong>. Esto implica que Interrail es preferida frente a todas las demás alternativas, salvo España, con la cual resulta incomparable, dado que ambas muestran un equilibrio entre sus capacidades de dominar y ser dominadas.</p>
+<p>Por su parte, España también es incomparable con Islas Griegas, ya que esta última presenta un flujo saliente menor.</p>
+<p>La alternativa Islas Griegas se muestra preferida a India, Caribe y Sudeste Asiático, al superarles tanto en su capacidad de dominancia como en menor grado de ser dominada.</p>
+<p>A continuación, se observa que India domina a Sudeste Asiático y al Caribe. Y finalmente, Sudeste Asiático domina al Caribe.</p>
+<p>Por ello, el Caribe se sitúa como la alternativa menos favorable del conjunto analizado.</p>
+<p>No obstante, veamos el método Promethee II que es quien me va a permitir ordenar de forma total las alternativas:</p>
+</section>
+<section id="método-promethee-ii" class="level4">
+<h4 class="anchored" data-anchor-id="método-promethee-ii">Método Promethee II</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>tab.Pthee.ii <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_ii</span>(tab, pesos.criterios, tab.fpref)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>tab.Pthee.ii</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$tabla.indices
+                    Caribe    España  India Sudeste Asiático Islas griegas
+Caribe           0.0000000 0.1190000 0.1535           0.1535        0.0000
+España           0.5515000 0.0000000 0.4570           0.4570        0.4225
+India            0.8120000 0.2473333 0.0000           0.0230        0.1060
+Sudeste Asiático 0.4240000 0.2473333 0.0115           0.0000        0.1060
+Islas griegas    0.6698333 0.1060000 0.1880           0.5760        0.0000
+Interrail        0.6698333 0.2250000 0.1880           0.5760        0.0345
+                 Interrail
+Caribe               0.000
+España               0.023
+India                0.106
+Sudeste Asiático     0.106
+Islas griegas        0.000
+Interrail            0.000
+
+$vflujos.netos
+          Caribe           España            India Sudeste Asiático 
+      -2.7011667        0.9663333        0.2963333       -0.8906667 
+   Islas griegas        Interrail 
+       0.8708333        1.4583333 
+
+$tablarelacionsupera
+                 Caribe España India Sudeste Asiático Islas griegas Interrail
+Caribe              0.5    0.0   0.0              0.0           0.0       0.0
+España              1.0    0.5   1.0              1.0           1.0       0.0
+India               1.0    0.0   0.5              1.0           0.0       0.0
+Sudeste Asiático    1.0    0.0   0.0              0.5           0.0       0.0
+Islas griegas       1.0    0.0   1.0              1.0           0.5       0.0
+Interrail           1.0    1.0   1.0              1.0           1.0       0.5</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(tab.Pthee.ii<span class="sc">$</span>vflujos.netos, <span class="at">decreasing=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6 2 5 3 4 1</code></pre>
+</div>
+</div>
+</section>
+<section id="conclusión-3" class="level4">
+<h4 class="anchored" data-anchor-id="conclusión-3">CONCLUSIÓN</h4>
+<p><strong>Con el método Promethee II concluimos que Interrail sería la alternativa preferida</strong> (al ser la de mayor flujo neto), seguida de las España, Islas Griegas, India, Sudeste Asiático, y por último, el Caribe.</p>
+<p>El orden es:</p>
+<p>Interrail&gt; España&gt; Islas Griegas &gt; India &gt; Sudeste Asiático &gt; Caribe</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="método-axiomático-de-arrow-y-raymond" class="level3">
+<h3 class="anchored" data-anchor-id="método-axiomático-de-arrow-y-raymond">MÉTODO AXIOMÁTICO DE ARROW Y RAYMOND</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>sejarrow <span class="ot">=</span> <span class="fu">multicriterio.metodoaxiomatico.ArrowRaymond</span>(tab)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>sejarrow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$pasos
+$pasos[[1]]
+$pasos[[1]]$Mclasificacion
+                 Caribe España India Sudeste Asiático Islas griegas Interrail
+Caribe               NA    1.0   3.0              3.0             1       0.5
+España              5.0     NA   4.0              4.0             3       2.5
+India               3.0    2.0    NA              3.5             2       2.0
+Sudeste Asiático    3.0    2.0   2.5               NA             2       2.0
+Islas griegas       5.0    3.0   4.0              4.0            NA       1.0
+Interrail           5.5    3.5   4.0              4.0             5        NA
+
+$pasos[[1]]$max.filas
+          Caribe           España            India Sudeste Asiático 
+             3.0              5.0              3.5              3.0 
+   Islas griegas        Interrail 
+             5.0              5.5 
+
+$pasos[[1]]$indices.ordenados
+[1] 1 4 3 2 5 6
+
+$pasos[[1]]$alternativa.sale
+[1] "Caribe"
+
+
+$pasos[[2]]
+$pasos[[2]]$Mclasificacion
+                 España India Sudeste Asiático Islas griegas Interrail
+España               NA   4.0              4.0             3       2.5
+India               2.0    NA              3.5             2       2.0
+Sudeste Asiático    2.0   2.5               NA             2       2.0
+Islas griegas       3.0   4.0              4.0            NA       1.0
+Interrail           3.5   4.0              4.0             5        NA
+
+$pasos[[2]]$max.filas
+          España            India Sudeste Asiático    Islas griegas 
+             4.0              3.5              2.5              4.0 
+       Interrail 
+             5.0 
+
+$pasos[[2]]$indices.ordenados
+[1] 3 2 1 4 5
+
+$pasos[[2]]$alternativa.sale
+[1] "Sudeste Asiático"
+
+
+$pasos[[3]]
+$pasos[[3]]$Mclasificacion
+              España India Islas griegas Interrail
+España            NA     4             3       2.5
+India            2.0    NA             2       2.0
+Islas griegas    3.0     4            NA       1.0
+Interrail        3.5     4             5        NA
+
+$pasos[[3]]$max.filas
+       España         India Islas griegas     Interrail 
+            4             2             4             5 
+
+$pasos[[3]]$indices.ordenados
+[1] 2 1 3 4
+
+$pasos[[3]]$alternativa.sale
+[1] "India"
+
+
+$pasos[[4]]
+$pasos[[4]]$Mclasificacion
+              España Islas griegas Interrail
+España            NA             3       2.5
+Islas griegas    3.0            NA       1.0
+Interrail        3.5             5        NA
+
+$pasos[[4]]$max.filas
+       España Islas griegas     Interrail 
+            3             3             5 
+
+$pasos[[4]]$indices.ordenados
+[1] 1 2 3
+
+$pasos[[4]]$alternativa.sale
+[1] "España"
+
+
+$pasos[[5]]
+$pasos[[5]]$Mclasificacion
+              Islas griegas Interrail
+Islas griegas            NA         1
+Interrail                 5        NA
+
+$pasos[[5]]$max.filas
+Islas griegas     Interrail 
+            1             5 
+
+$pasos[[5]]$indices.ordenados
+[1] 1 2
+
+$pasos[[5]]$alternativa.sale
+[1] "Islas griegas"
+
+
+
+$alternativasordenadas
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>sejarrow<span class="sc">$</span>alternativasordenadas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          </code></pre>
+</div>
+</div>
+<section id="conclusión-4" class="level5">
+<h5 class="anchored" data-anchor-id="conclusión-4">CONCLUSIÓN</h5>
+<p><strong>Con el método axiomático de Arrow y Raymons concluimos que Interrail sería la alternativa preferida</strong> seguida de Islas Griegas, España, India, Sudeste Asiático, y por último, el Caribe.</p>
+<p>El orden en este caso es:</p>
+<p>Interrail&gt; Islas Griegas &gt; España&gt; India &gt; Sudeste Asiático &gt; Caribe</p>
+</section>
+<section id="análisis-paramétrico-o-de-sensibilidad-aplicación-método-axiomático-de-arrow-y-raymond" class="level4">
+<h4 class="anchored" data-anchor-id="análisis-paramétrico-o-de-sensibilidad-aplicación-método-axiomático-de-arrow-y-raymond">Análisis paramétrico o de sensibilidad aplicación Método axiomático de Arrow y Raymond</h4>
+<p>Estudiamos cómo cambian las ordenaciones de las alternativas si se incrementa un determinado porcentaje las valoraciones de la primera alternativa en todos los criterios:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>intalpha <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">0.1</span>)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>sols <span class="ot">=</span> <span class="fu">vector</span>(<span class="st">"list"</span>,<span class="fu">length</span>(intalpha))</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(intalpha)) {</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>  tab_i <span class="ot">=</span> tab</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  tab_i[<span class="dv">1</span>,] <span class="ot">=</span> tab_i[<span class="dv">1</span>,] <span class="sc">*</span> intalpha[i]</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>  tab_i <span class="ot">=</span> <span class="fu">multicriterio.metodoaxiomatico.ArrowRaymond</span>(tab_i)</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>  sols[[i]] <span class="ot">=</span> tab_i<span class="sc">$</span>alternativasordenadas</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>sols</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          
+
+[[2]]
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          
+
+[[3]]
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          
+
+[[4]]
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          
+
+[[5]]
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          
+
+[[6]]
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          
+
+[[7]]
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          
+
+[[8]]
+[1] "Interrail"        "Islas griegas"    "España"           "India"           
+[5] "Sudeste Asiático" "Caribe"          
+
+[[9]]
+[1] "Interrail"        "Islas griegas"    "Caribe"           "España"          
+[5] "India"            "Sudeste Asiático"
+
+[[10]]
+[1] "Interrail"        "Islas griegas"    "Caribe"           "España"          
+[5] "India"            "Sudeste Asiático"
+
+[[11]]
+[1] "Caribe"           "Interrail"        "Islas griegas"    "España"          
+[5] "India"            "Sudeste Asiático"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ¿Qué posiciones ha tenido "a1" para los distintos valores de alfa?</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>posiciones_a1 <span class="ot">=</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(intalpha))</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(intalpha)) {</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>  posiciones_a1[i] <span class="ot">=</span> <span class="fu">which</span>(sols[[i]]<span class="sc">==</span><span class="st">"Caribe"</span>)</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>posiciones_a1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 6 6 6 6 6 6 6 6 3 3 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a> <span class="do">## [1] 6 6 6 6 6 6 6 6 3 3 1</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Representar gráficamente estos cambios:</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(intalpha,posiciones_a1,<span class="at">type=</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="trabajo02_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusión-5" class="level4">
+<h4 class="anchored" data-anchor-id="conclusión-5">CONCLUSIÓN</h4>
+<p>El estudio de sensibilidad realizado mediante el método axiomático de Arrow y Raymond muestra cómo la posición del Caribe varía al aumentar progresivamente las valoraciones de la primera alternativa. Durante los primeros incrementos desde 1 a 1.7 (es decir, un 70%), la posición del Caribe se mantiene estable en el último lugar, lo que indica que los cambios pequeños en las valoraciones de la primera alternativa no afectan significativamente su ordenamiento relativo.</p>
+<p>Sin embargo, a partir de un incremento superior o igual al 80%, la posición del Caribe mejora notablemente, pasando a 3º lugar y finalmente alcanzando el 1º lugar cuando el incremento es del 100%.</p>
+<p>Esto evidencia que el ranking de alternativas es sensible a incrementos considerables en las valoraciones de las opciones.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="conclusión-final" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión-final">CONCLUSIÓN FINAL</h3>
+<p>Interrail es la alternativa que emerge como más robusta frente a múltiples métodos de decisión estudiados, siendo señalada como la mejor opción en tres de los cuatro métodos aplicados (ELECTRE, PROMETHEE II y Arrow-Raymond).</p>
+<p>Por otro lado, España constituye una opción muy competitiva y estable, situándose frecuentemente entre las primeras posiciones y especialmente destacando bajo el AHP y el método PROMETHEE I.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

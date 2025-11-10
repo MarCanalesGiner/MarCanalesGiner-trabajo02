@@ -6,6 +6,10 @@ format:
   html:
     toc: true
     toc-title: "Índice"
+  typst:
+    toc: true
+    toc-title: "Índice"
+    prefer-html: true
 ---
 
 \newpage
@@ -56,11 +60,13 @@ source("https://raw.githubusercontent.com/calote/TDecisionCodigo/refs/heads/mast
 library(kableExtra)
 ```
 
+\newpage
+
 ### MÉTODO AHP
 
 El primer método que vamos a estudiar es el método AHP, este podemos implementarlo usando la librería de R ahp o con funciones de R
 
-Resolución con funciones de R:
+RESOLUCIÓN CON FUNCIONES DE R:
 
 ```{r}
 ## NivelCriterios-Subcriterios:
@@ -178,7 +184,7 @@ colnames(pond.globales) = c("Caribe","España","India","SudesteAsiatico", "Islas
 pond.globales
 ```
 
-Resolución con la librería ahp:
+RESOLUCIÓN CON LA LIBRERÍA AHP:
 
 ```{r}
 library(ahp)
@@ -188,8 +194,11 @@ library(formattable)
 
 datos = Load("ModeloTrabajo02.ahp") # archivo con la estructura del problema
 Calculate(datos) # Calcular las prioridades
-Visualize(datos) # Visualizar la jerarquia
+# Visualize(datos) # Visualizar la jerarquia
+# Nota: lo he dejado comentado porque sino cuando exporto a pdf me da error
 ```
+
+![](images/Captura de pantalla 2025-11-10 191848.png)
 
 ```{r}
 # Analizamos
@@ -355,30 +364,6 @@ pesos=c(0.388,0.212,0.212,0.119,0.069*0.3333333, 0.069*0.6666667)
 # sum(pesos) (compruebo que sumen 1)
 ```
 
-#### JUSTIFICACIÓN DE LAS VALORACIONES (ÍDEM PARA LOS SIGUIENTES MÉTODOS)
-
-Explicamos detalladamente para la primer alternativa, el Caribe, las valoraciones realizadas:
-
--   Coste = -4000: El viaje al Caribe con “todo incluido” se estima como el más costoso de las opciones, debido a vuelos intercontinentales, estancias largas en resorts y alta demanda de temporada. (Fuente: <https://www.onlyuniversity.es/?gad_source=1&gad_campaignid=19929968317&gbraid=0AAAAADQKnalRvRqvzrjeQ_LzkKH4y6vhS&gclid=CjwKCAiAt8bIBhBpEiwAzH1w6aW3_xR8JxP2rTaOx2nzhqnIkQto25t1UgJ4Cy50XrFlSSWhaWtBkRoCriQQAvD_BwE>).
-
--   Organización = -4: Aunque es relativamente sencillo un resort “todo incluido”, coordinar un grupo de 20 personas en un destino remoto implica trámites migratorios, transporte desde el aeropuerto y logística extra, por lo que es menos fácil que España o Islas Griegas.
-
--   Cultura-Naturaleza = 2: El Caribe ofrece playas espectaculares pero, en muchos casos, menor inmersión cultural comparado con India o Sudeste Asiático debido a que se suele permanecer en el resort haciendo otro tipo de actividades.
-
--   Ocio = 5: Alto valor porque los resorts caribeños centran su oferta en ocio, descanso y diversión (deportes acuáticos, espectáculos, animación).
-
--   Seguridad Sanitaria = 6: Nivel relativamente bueno, con buenos resorts y atención turística, aunque algunos países caribeños tienen infraestructura sanitaria limitada.
-
--   Seguridad Socio-Política = 5: Buena, pero algunos destinos turísticos presentan niveles de delincuencia o inseguridad moderada frente a Europa.
-
-El resto de valoraciones en las demás alternativas se han realizado de manera análoga siguiendo en el caso del criterio coste la búsqueda de vuelos con la web skyscanner, la agencia de viaje xcape y Tu Fin de Curso de Sevilla.
-
-El criterio organización ha sido valorado más desde la experiencia personal y buscando el plan de vacunación y visados necesarios para cada uno de los lugares de destino.
-
-Por otro lado, los criterios de naturaleza y cultura y ocio han sido valorados atendiendo a varios rankings que he encontrado en internet como el de National Geographic: [https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415](https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415) y <https://www.lasexta.com/viajestic/destinos/estos-son-mejores-destinos-mundo-amantes-ocio-nocturno_20250607684450794c9357775b849b0e.html> respectivamente.
-
-Por último, los criterios de **Seguridad Sanitaria** y **Seguridad Socio-Política** han sido valorados atendiendo a diversos indicadores internacionales sobre estabilidad, sistemas sanitarios y riesgos para viajeros. En concreto, se han tenido en cuenta: los informes globales de seguridad sanitaria de la Organización Mundial de la Salud (OMS), el Global Health Security Index (GHSI), que evalúa la capacidad de los países para prevenir, detectar y responder ante riesgos sanitarios y el Global Peace Index (GPI) que clasifica a los países según estabilidad política, criminalidad, riesgo de conflictos y seguridad para los viajeros. Así como los avisos para viajeros del Ministerio de Asuntos Exteriores de España (MAEC), que identifican el nivel de riesgo en diferentes regiones.
-
 ```{r}
 alfa0=0.7 
 electre0 = multicriterio.metodoELECTRE_I(tab,pesos.criterios=pesos, 
@@ -410,6 +395,30 @@ electre$relacion.dominante
 qgraph::qgraph(electre$relacion.dominante) 
 electre$nucleo_aprox
 ```
+
+#### JUSTIFICACIÓN DE LAS VALORACIONES (ÍDEM PARA LOS SIGUIENTES MÉTODOS)
+
+Explicamos detalladamente para la primer alternativa, el Caribe, las valoraciones realizadas:
+
+-   Coste = -4000: El viaje al Caribe con “todo incluido” se estima como el más costoso de las opciones, debido a vuelos intercontinentales, estancias largas en resorts y alta demanda de temporada. (Fuente: <https://www.onlyuniversity.es/?gad_source=1&gad_campaignid=19929968317&gbraid=0AAAAADQKnalRvRqvzrjeQ_LzkKH4y6vhS&gclid=CjwKCAiAt8bIBhBpEiwAzH1w6aW3_xR8JxP2rTaOx2nzhqnIkQto25t1UgJ4Cy50XrFlSSWhaWtBkRoCriQQAvD_BwE>).
+
+-   Organización = -4: Aunque es relativamente sencillo un resort “todo incluido”, coordinar un grupo de 20 personas en un destino remoto implica trámites migratorios, transporte desde el aeropuerto y logística extra, por lo que es menos fácil que España o Islas Griegas.
+
+-   Cultura-Naturaleza = 2: El Caribe ofrece playas espectaculares pero, en muchos casos, menor inmersión cultural comparado con India o Sudeste Asiático debido a que se suele permanecer en el resort haciendo otro tipo de actividades.
+
+-   Ocio = 5: Alto valor porque los resorts caribeños centran su oferta en ocio, descanso y diversión (deportes acuáticos, espectáculos, animación).
+
+-   Seguridad Sanitaria = 6: Nivel relativamente bueno, con buenos resorts y atención turística, aunque algunos países caribeños tienen infraestructura sanitaria limitada.
+
+-   Seguridad Socio-Política = 5: Buena, pero algunos destinos turísticos presentan niveles de delincuencia o inseguridad moderada frente a Europa.
+
+El resto de valoraciones en las demás alternativas se han realizado de manera análoga siguiendo en el caso del criterio coste la búsqueda de vuelos con la web skyscanner, la agencia de viaje xcape y Tu Fin de Curso de Sevilla.
+
+El criterio organización ha sido valorado más desde la experiencia personal y buscando el plan de vacunación y visados necesarios para cada uno de los lugares de destino.
+
+Por otro lado, los criterios de naturaleza y cultura y ocio han sido valorados atendiendo a varios rankings que he encontrado en internet como el de National Geographic: [https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415](https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415) y <https://www.lasexta.com/viajestic/destinos/estos-son-mejores-destinos-mundo-amantes-ocio-nocturno_20250607684450794c9357775b849b0e.html> respectivamente.
+
+Por último, los criterios de **Seguridad Sanitaria** y **Seguridad Socio-Política** han sido valorados atendiendo a diversos indicadores internacionales sobre estabilidad, sistemas sanitarios y riesgos para viajeros. En concreto, se han tenido en cuenta: los informes globales de seguridad sanitaria de la Organización Mundial de la Salud (OMS), el Global Health Security Index (GHSI), que evalúa la capacidad de los países para prevenir, detectar y responder ante riesgos sanitarios y el Global Peace Index (GPI) que clasifica a los países según estabilidad política, criminalidad, riesgo de conflictos y seguridad para los viajeros. Así como los avisos para viajeros del Ministerio de Asuntos Exteriores de España (MAEC), que identifican el nivel de riesgo en diferentes regiones.
 
 #### CONCLUSIÓN
 
@@ -478,8 +487,8 @@ También podemos hacerlo especificando si queremos maximizarlos o minimizarlos:
 Impresión de los resultados de una forma más elegente:
 
 ```{r}
-res_fin = multicriterio.metodo.promethee_windows_kableExtra(res_windows)
-res_fin$tabEscenario
+# res_fin = multicriterio.metodo.promethee_windows_kableExtra(res_windows)
+# res_fin$tabEscenario
 ```
 
 #### CONCLUSIÓN
@@ -570,3 +579,13 @@ El estudio de sensibilidad realizado mediante el método axiomático de Arrow y 
 Sin embargo, a partir de un incremento superior o igual al 80%, la posición del Caribe mejora notablemente, pasando a 3º lugar y finalmente alcanzando el 1º lugar cuando el incremento es del 100%.
 
 Esto evidencia que el ranking de alternativas es sensible a incrementos considerables en las valoraciones de las opciones.
+
+\newpage
+
+### CONCLUSIÓN FINAL
+
+Tras aplicar y comparar los distintos métodos de decisión multicriterio, **Interrail** se destaca como la alternativa más robusta y consistente, resultando la mejor opción en tres de los cuatro métodos analizados: ELECTRE, PROMETHEE II y Arrow-Raymond. Su desempeño equilibrado en los diferentes criterios lo posiciona como la opción más sólida para el viaje de fin de carrera.
+
+Por su parte, España se mantiene como una alternativa altamente competitiva y estable, ocupando frecuentemente los primeros lugares, especialmente según los resultados obtenidos con AHP y PROMETHEE I. Esto refleja que, aunque Interrail es la opción más recomendada, España sigue siendo una elección atractiva.
+
+En conclusión, considerando el análisis de los criterios económicos, organizativos, culturales, de ocio y de seguridad, la alternativa recomendada para el viaje de fin de carrera de este año es Interrail.

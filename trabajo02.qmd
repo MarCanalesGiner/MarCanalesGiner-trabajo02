@@ -184,6 +184,45 @@ colnames(pond.globales) = c("Caribe","España","India","SudesteAsiatico", "Islas
 pond.globales
 ```
 
+Procedamso al estudio de la inconsistencia de cada una de las tablas:
+
+```{r}
+Inconsistencia1 = multicriterio.metodoAHP.coef.inconsistencia(XmatrizC1)
+c(Inconsistencia1$mensaje, round(Inconsistencia1$RI.coef.inconsistencia,4) )
+```
+
+```{r}
+Inconsistencia3 = multicriterio.metodoAHP.coef.inconsistencia(Xmatriz1)
+c(Inconsistencia3$mensaje, round(Inconsistencia3$RI.coef.inconsistencia,4) )
+```
+
+```{r}
+Inconsistencia4 = multicriterio.metodoAHP.coef.inconsistencia(Xmatriz2)
+c(Inconsistencia4$mensaje, round(Inconsistencia4$RI.coef.inconsistencia,4) )
+```
+
+```{r}
+Inconsistencia5 = multicriterio.metodoAHP.coef.inconsistencia(Xmatriz3)
+c(Inconsistencia5$mensaje, round(Inconsistencia5$RI.coef.inconsistencia,4) )
+```
+
+```{r}
+Inconsistencia6 = multicriterio.metodoAHP.coef.inconsistencia(Xmatriz4)
+c(Inconsistencia6$mensaje, round(Inconsistencia6$RI.coef.inconsistencia,4) )
+```
+
+```{r}
+Inconsistencia7 = multicriterio.metodoAHP.coef.inconsistencia(Xmatriz5)
+c(Inconsistencia7$mensaje, round(Inconsistencia7$RI.coef.inconsistencia,4) )
+```
+
+```{r}
+Inconsistencia8 = multicriterio.metodoAHP.coef.inconsistencia(Xmatriz6)
+c(Inconsistencia8$mensaje, round(Inconsistencia8$RI.coef.inconsistencia,4) )
+```
+
+Observamos que todas las matrices tienen consistencia aceptable, salvo la matriz de Seguridad Sanitaria que se encuentra justo en el límite, vamos a aceptar que es consistente también. Por lo que las valoraciones que hemos puesto tienen sentido, son coherentes.
+
 RESOLUCIÓN CON LA LIBRERÍA AHP:
 
 ```{r}
@@ -198,7 +237,7 @@ Calculate(datos) # Calcular las prioridades
 # Nota: lo he dejado comentado porque sino cuando exporto a pdf me da error
 ```
 
-![](images/Captura de pantalla 2025-11-10 191848.png)
+![](images/Captura%20de%20pantalla%202025-11-10%20191848.png)
 
 ```{r}
 # Analizamos
@@ -222,8 +261,7 @@ Calculate(datos) # Calcular las prioridades
 -   Costo = 2 vs Cultura-Naturaleza= 1\
     El costo es débilmente más importante que el atractivo cultural y natural. Aunque los aspectos culturales enriquecen la experiencia, los usuarios suelen filtrar opciones primero por precio.
 
--   Costo = 2 vs Diversión = 1
-    El costo es débilmente más relevante que la diversión, porque aunque sea el viaje de fin de curso y hayan expectativas muy altas de pasárnoslo bien, si el precio se sale del presupuesto simplemente deja de ser una opción.
+-   Costo = 2 vs Diversión = 1 El costo es débilmente más relevante que la diversión, porque aunque sea el viaje de fin de curso y hayan expectativas muy altas de pasárnoslo bien, si el precio se sale del presupuesto simplemente deja de ser una opción.
 
 -   Costo = 3 vs Seguridad = 1\
     El costo es preferido frente a la seguridad. Aunque la seguridad es un aspecto relevante, en este contexto se valora que el presupuesto disponible es normalmente la principal restricción en la decisión inicial.
@@ -396,6 +434,16 @@ qgraph::qgraph(electre$relacion.dominante)
 electre$nucleo_aprox
 ```
 
+#### ELECTRE PASO A PASO
+
+Obtenemos los pasos intermedios y las tablas de concordancia y discordancia:
+
+```{r}
+electre_completo = func_ELECTRE_Completo(electre)
+electre_completo$MIndices$KE
+
+```
+
 #### JUSTIFICACIÓN DE LAS VALORACIONES (ÍDEM PARA LOS SIGUIENTES MÉTODOS)
 
 Explicamos detalladamente para la primer alternativa, el Caribe, las valoraciones realizadas:
@@ -439,6 +487,22 @@ Por tanto, **según el método ELECTRE, el Interrail se considera la mejor alter
 \newpage
 
 ### MÉTODO PROMETHEE
+
+Vamos a usar la misma matriz de decisión ya explicada y los mismos pesos obtenidos por el método AHP. No osbtante, voy a aprovechar al máximo las ventajas de este método y voy a usar para cada criterio una función de preferencia distinta:
+
+Coste: Cuasi Criterio (q=1000)
+
+Organización: Criterio con preferencia lineal y área de indiferencia (q=1,p=2.5)
+
+Cultuta-Naturaleza: Criterio Nivel (q=0.5,p=2.5)
+
+Ocio: Criterio Nivel (q=1,p=2)
+
+Seguridad Sanitaria: Criterio Nivel (q=0.5,p=4)
+
+Seguridad Socio-Política: Criterio Nivel (q=0.5,p=4)
+
+Procedemos a introducir los datos:
 
 ```{r}
 tab = multicriterio.crea.matrizdecision(c(-4000, -4, 2, 5, 6, 5, # Caribe

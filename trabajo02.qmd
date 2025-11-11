@@ -436,13 +436,38 @@ electre$nucleo_aprox
 
 #### ELECTRE PASO A PASO
 
-Obtenemos los pasos intermedios y las tablas de concordancia y discordancia:
+Obtenemos los pasos intermedios y las tablas de concordancia y discordancia, voy a hacerlo para el inicial:
 
 ```{r}
-electre_completo = func_ELECTRE_Completo(electre)
-electre_completo$MIndices$KE
-
+electre_completo = func_ELECTRE_Completo(electre0)
+# electre_completo$MIndices$KE
 ```
+
+![](images/Captura de pantalla 2025-11-11 113848.png)
+
+Tabla de Concordancia:
+
+```{r}
+# electre_completo$TConcordancia$KE
+```
+
+![](images/Captura de pantalla 2025-11-11 114436.png)
+
+Tabla de Discordancia:
+
+```{r}
+# electre_completo$TDiscordancia$KE
+```
+
+![](images/Captura de pantalla 2025-11-11 114648.png)
+
+Tabla de Superación:
+
+```{r}
+# electre_completo$TSuperacion$KE
+```
+
+![](images/Captura de pantalla 2025-11-11 114812.png)
 
 #### JUSTIFICACIÓN DE LAS VALORACIONES (ÍDEM PARA LOS SIGUIENTES MÉTODOS)
 

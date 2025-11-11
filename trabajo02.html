@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Mar Canales">
-<meta name="dcterms.date" content="2025-11-10">
+<meta name="dcterms.date" content="2025-11-11">
 
 <title>Trabajo02: Elección del viaje de fin de carrera</title>
 <style>
@@ -71,20 +71,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="trabajo02_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="trabajo02_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="trabajo02_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="trabajo02_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-
-<script src="trabajo02_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-
-<script src="trabajo02_files/libs/viz-1.8.2/viz.js"></script>
-
-<link href="trabajo02_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-
-<script src="trabajo02_files/libs/grViz-binding-1.0.11/grViz.js"></script>
-
-<script src="trabajo02_files/libs/kePrint-0.0.1/kePrint.js"></script>
-
-<link href="trabajo02_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 
 </head>
@@ -127,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 10, 2025</p>
+      <p class="date">November 11, 2025</p>
     </div>
   </div>
   
@@ -179,6 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="método-ahp" class="level3">
 <h3 class="anchored" data-anchor-id="método-ahp">MÉTODO AHP</h3>
@@ -338,30 +325,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [1,] 0.1197438 0.2563154 0.1299295       0.1204691     0.180871 0.1926399</code></pre>
 </div>
 </div>
+<p>Procedamso al estudio de la inconsistencia de cada una de las tablas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia1 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(XmatrizC1)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia1<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia1<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0039"                </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia3 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(Xmatriz1)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia3<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia3<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0534"                </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia4 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(Xmatriz2)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia4<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia4<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0225"                </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia5 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(Xmatriz3)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia5<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia5<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0217"                </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia6 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(Xmatriz4)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia6<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia6<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0225"                </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia7 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(Xmatriz5)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia7<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia7<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia no aceptable. Revisar las comparaciones de criterios por pares"
+[2] "0.1004"                                                                     </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>Inconsistencia8 <span class="ot">=</span> <span class="fu">multicriterio.metodoAHP.coef.inconsistencia</span>(Xmatriz6)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(Inconsistencia8<span class="sc">$</span>mensaje, <span class="fu">round</span>(Inconsistencia8<span class="sc">$</span>RI.coef.inconsistencia,<span class="dv">4</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consistencia aceptable" "0.0757"                </code></pre>
+</div>
+</div>
+<p>Observamos que todas las matrices tienen consistencia aceptable, salvo la matriz de Seguridad Sanitaria que se encuentra justo en el límite, vamos a aceptar que es consistente también. Por lo que las valoraciones que hemos puesto tienen sentido, son coherentes.</p>
 <p>RESOLUCIÓN CON LA LIBRERÍA AHP:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ahp)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#ahp::RunGUI()</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">Load</span>(<span class="st">"ModeloTrabajo02.ahp"</span>) <span class="co"># archivo con la estructura del problema</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Calculate</span>(datos) <span class="co"># Calcular las prioridades</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Visualize</span>(datos) <span class="co"># Visualizar la jerarquia</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-20411d2afb294c6a54b4" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-20411d2afb294c6a54b4">{"x":{"diagram":"digraph {\n\ngraph [rankdir = \"TB\"]\n\n\n\n  \"1\" [label = \"Elegir el mejor en destino de viaje de fin de curso\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"2\" [label = \"Costo\", tooltip = \"priority: 38.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"3\" [label = \"Organización\", tooltip = \"priority: 6.9%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"4\" [label = \"CulturaNaturaleza\", tooltip = \"priority: 21.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"5\" [label = \"Diversión\", tooltip = \"priority: 21.2%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"6\" [label = \"Seguridad\", tooltip = \"priority: 11.9%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"7\" [label = \"SeguridadSanitaria\", tooltip = \"priority: 33.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"8\" [label = \"SeguridadSociopolitica\", tooltip = \"priority: 66.7%\n\", style = \"filled,rounded\", shape = \"box\", color = \"honeydew4\", fillcolor = \"#F0FFF0\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"black\"] \n  \"9\" [label = \"Alternatives\", tooltip = \"\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"10\" [label = \"Caribe\", tooltip = \"priority: 3.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"11\" [label = \"España\", tooltip = \"priority: 42.5%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"12\" [label = \"India\", tooltip = \"priority: 8.3%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"13\" [label = \"SudesteAsiatico\", tooltip = \"priority: 6.1%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"14\" [label = \"IslasGriegas\", tooltip = \"priority: 19.9%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n  \"15\" [label = \"Interrail\", tooltip = \"priority: 19.9%\n\", style = \"filled,rounded\", shape = \"box\", color = \"thistle4\", fillcolor = \"#D8BFD8\", penwidth = \"4\", fontname = \"helvetica\", fontcolor = \"\"] \n\"1\"->\"2\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"3\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"4\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"5\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"1\"->\"6\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"6\"->\"7\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"6\"->\"8\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"2\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"3\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"4\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"5\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"7\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"8\"->\"9\" [arrowhead = \"vee\", color = \"grey35\", penwidth = \"2\", penwidth = \"2\"] \n\"9\"->\"10\" [penwidth = \"2\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"11\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"12\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"13\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"14\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n\"9\"->\"15\" [dir = \"none\", color = \"grey35\", penwidth = \"2\", dir = \"none\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ahp)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co">#ahp::RunGUI()</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">Load</span>(<span class="st">"ModeloTrabajo02.ahp"</span>) <span class="co"># archivo con la estructura del problema</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Calculate</span>(datos) <span class="co"># Calcular las prioridades</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize(datos) # Visualizar la jerarquia</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Nota: lo he dejado comentado porque sino cuando exporto a pdf me da error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p><img src="images/Captura%20de%20pantalla%202025-11-10%20191848.png" class="img-fluid"></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analizamos</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># AnalyzeTable(datos)</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># AnalyzeTable(datos, variable = "priority")</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Lo he dejado comentado porque al exportarlo a pdf se ven mal las tablas</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Para exportar una "foto" de las tablas usamos los siguientes comandos:</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># export_formattable(AnalyzeTable(datos), file = "tabla.png")</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPriority.png")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analizamos</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># AnalyzeTable(datos)</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># AnalyzeTable(datos, variable = "priority")</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Lo he dejado comentado porque al exportarlo a pdf se ven mal las tablas</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Para exportar una "foto" de las tablas usamos los siguientes comandos:</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># export_formattable(AnalyzeTable(datos), file = "tabla.png")</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="co"># export_formattable(AnalyzeTable(datos, variable = "priority"), file = "tablaPriority.png")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="tabla.png" class="img-fluid"></p>
 <p><img src="tablaPriority.png" class="img-fluid"></p>
@@ -450,15 +487,15 @@ El costo es preferido frente a la seguridad. Aunque la seguridad es un aspecto r
 <h3 class="anchored" data-anchor-id="método-electre">MÉTODO ELECTRE</h3>
 <p>Comenzamos definiendo la matriz y los pesos. Recuerda que como el coste y la seguridad queríamos minimizarlos debemos de cambiarle el signo a los datos correspondientes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4000</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="co"># Caribe</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">500</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="co"># España</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2200</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="co"># India</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">3000</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="co"># Sudeste Asiático</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1800</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="co"># Crucero Islas Griegas</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1500</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">8</span> <span class="co"># Interrail</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>), <span class="at">numalternativas =</span> <span class="dv">6</span>, <span class="at">numcriterios=</span><span class="dv">6</span>, <span class="at">v.nombresalt=</span><span class="fu">c</span>(<span class="st">'Caribe'</span>,<span class="st">'España'</span>,<span class="st">'India'</span>,<span class="st">'Sudeste Asiatico'</span>,<span class="st">'Islas griegas'</span>,<span class="st">'Interrail'</span>), <span class="at">v.nombrescri=</span><span class="fu">c</span>(<span class="st">'Coste'</span>,<span class="st">'Organización'</span>,<span class="st">'Cultura-Naturaleza'</span>,<span class="st">'Ocio'</span>,<span class="st">'SeguridadSanitaria'</span>,<span class="st">'SeguridadSocioPolitica'</span>))</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>tab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4000</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="co"># Caribe</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">500</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="co"># España</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2200</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="co"># India</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">3000</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="co"># Sudeste Asiático</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1800</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="co"># Crucero Islas Griegas</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1500</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">8</span> <span class="co"># Interrail</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>), <span class="at">numalternativas =</span> <span class="dv">6</span>, <span class="at">numcriterios=</span><span class="dv">6</span>, <span class="at">v.nombresalt=</span><span class="fu">c</span>(<span class="st">'Caribe'</span>,<span class="st">'España'</span>,<span class="st">'India'</span>,<span class="st">'Sudeste Asiatico'</span>,<span class="st">'Islas griegas'</span>,<span class="st">'Interrail'</span>), <span class="at">v.nombrescri=</span><span class="fu">c</span>(<span class="st">'Coste'</span>,<span class="st">'Organización'</span>,<span class="st">'Cultura-Naturaleza'</span>,<span class="st">'Ocio'</span>,<span class="st">'SeguridadSanitaria'</span>,<span class="st">'SeguridadSocioPolitica'</span>))</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>tab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Coste Organización Cultura-Naturaleza Ocio SeguridadSanitaria
 Caribe           -4000           -4                  2    5                  6
@@ -475,23 +512,23 @@ Sudeste Asiatico                      2
 Islas griegas                         7
 Interrail                             8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>pesos<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.388</span>,<span class="fl">0.212</span>,<span class="fl">0.212</span>,<span class="fl">0.119</span>,<span class="fl">0.069</span><span class="sc">*</span><span class="fl">0.3333333</span>, <span class="fl">0.069</span><span class="sc">*</span><span class="fl">0.6666667</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sum(pesos) (compruebo que sumen 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>pesos<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.388</span>,<span class="fl">0.212</span>,<span class="fl">0.212</span>,<span class="fl">0.119</span>,<span class="fl">0.069</span><span class="sc">*</span><span class="fl">0.3333333</span>, <span class="fl">0.069</span><span class="sc">*</span><span class="fl">0.6666667</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sum(pesos) (compruebo que sumen 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>alfa0<span class="ot">=</span><span class="fl">0.7</span> </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>electre0 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(tab,<span class="at">pesos.criterios=</span>pesos, </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">nivel.concordancia.minimo.alpha =</span> alfa0, </span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="dv">1500</span>,<span class="cn">Inf</span>,<span class="dv">4</span>,<span class="cn">Inf</span>,<span class="dv">8</span>,<span class="dv">8</span>), </span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">que.alternativas =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(electre0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>alfa0<span class="ot">=</span><span class="fl">0.7</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>electre0 <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(tab,<span class="at">pesos.criterios=</span>pesos, </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">nivel.concordancia.minimo.alpha =</span> alfa0, </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="dv">1500</span>,<span class="cn">Inf</span>,<span class="dv">4</span>,<span class="cn">Inf</span>,<span class="dv">8</span>,<span class="dv">8</span>), </span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">que.alternativas =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(electre0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "datos"                  "alpha"                  "Imas"                  
  [4] "Iigual"                 "Imenos"                 "ind.concordancia"      
  [7] "ind.concordancia.gorro" "test.concordancia"      "test.discordancia"     
 [10] "relacion.dominante"     "nucleo_aprox"          </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>electre0<span class="sc">$</span>relacion.dominante</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>electre0<span class="sc">$</span>relacion.dominante</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Caribe España India Sudeste Asiatico Islas griegas Interrail
 Caribe            FALSE  FALSE FALSE            FALSE         FALSE     FALSE
@@ -503,7 +540,7 @@ Interrail          TRUE  FALSE FALSE            FALSE          TRUE     FALSE</c
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(electre0<span class="sc">$</span>relacion.dominante) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(electre0<span class="sc">$</span>relacion.dominante) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
 no ASCII</code></pre>
@@ -511,11 +548,11 @@ no ASCII</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="trabajo02_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="trabajo02_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>electre0<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>electre0<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   España     India Interrail 
         2         3         6 </code></pre>
@@ -523,19 +560,19 @@ no ASCII</code></pre>
 </div>
 <p>Observamos que tenemos tres elementos en el núcleo: España, India e Interrail. Por ello, vamos a intentar ver qué obtenemos cambiando el valor de alfa</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>alfa<span class="ot">=</span><span class="fl">0.55</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>electre <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(tab,<span class="at">pesos.criterios=</span>pesos, </span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">nivel.concordancia.minimo.alpha =</span> alfa, </span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="dv">1500</span>,<span class="cn">Inf</span>,<span class="dv">4</span>,<span class="cn">Inf</span>,<span class="dv">8</span>,<span class="dv">8</span>), </span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">que.alternativas =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(electre)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>alfa<span class="ot">=</span><span class="fl">0.55</span> </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>electre <span class="ot">=</span> <span class="fu">multicriterio.metodoELECTRE_I</span>(tab,<span class="at">pesos.criterios=</span>pesos, </span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">nivel.concordancia.minimo.alpha =</span> alfa, </span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">no.se.compensan =</span> <span class="fu">c</span>(<span class="dv">1500</span>,<span class="cn">Inf</span>,<span class="dv">4</span>,<span class="cn">Inf</span>,<span class="dv">8</span>,<span class="dv">8</span>), </span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">que.alternativas =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(electre)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "datos"                  "alpha"                  "Imas"                  
  [4] "Iigual"                 "Imenos"                 "ind.concordancia"      
  [7] "ind.concordancia.gorro" "test.concordancia"      "test.discordancia"     
 [10] "relacion.dominante"     "nucleo_aprox"          </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>electre<span class="sc">$</span>relacion.dominante</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>electre<span class="sc">$</span>relacion.dominante</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Caribe España India Sudeste Asiatico Islas griegas Interrail
 Caribe            FALSE  FALSE FALSE            FALSE         FALSE     FALSE
@@ -547,7 +584,7 @@ Interrail          TRUE   TRUE  TRUE             TRUE          TRUE     FALSE</c
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(electre<span class="sc">$</span>relacion.dominante) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>qgraph<span class="sc">::</span><span class="fu">qgraph</span>(electre<span class="sc">$</span>relacion.dominante) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in abbreviate(colnames(input), 3): abreviatura utilizada con caracteres
 no ASCII</code></pre>
@@ -555,16 +592,40 @@ no ASCII</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="trabajo02_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="trabajo02_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>electre<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>electre<span class="sc">$</span>nucleo_aprox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Interrail 
         6 </code></pre>
 </div>
 </div>
+<section id="electre-paso-a-paso" class="level4">
+<h4 class="anchored" data-anchor-id="electre-paso-a-paso">ELECTRE PASO A PASO</h4>
+<p>Obtenemos los pasos intermedios y las tablas de concordancia y discordancia, voy a hacerlo para el inicial:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>electre_completo <span class="ot">=</span> <span class="fu">func_ELECTRE_Completo</span>(electre0)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="co"># electre_completo$MIndices$KE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/Captura%20de%20pantalla%202025-11-11%20113848.png" class="img-fluid"></p>
+<p>Tabla de Concordancia:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># electre_completo$TConcordancia$KE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/Captura%20de%20pantalla%202025-11-11%20114436.png" class="img-fluid"></p>
+<p>Tabla de Discordancia:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># electre_completo$TDiscordancia$KE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/Captura%20de%20pantalla%202025-11-11%20114648.png" class="img-fluid"></p>
+<p>Tabla de Superación:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># electre_completo$TSuperacion$KE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/Captura%20de%20pantalla%202025-11-11%20114812.png" class="img-fluid"></p>
+</section>
 <section id="justificación-de-las-valoraciones-ídem-para-los-siguientes-métodos" class="level4">
 <h4 class="anchored" data-anchor-id="justificación-de-las-valoraciones-ídem-para-los-siguientes-métodos">JUSTIFICACIÓN DE LAS VALORACIONES (ÍDEM PARA LOS SIGUIENTES MÉTODOS)</h4>
 <p>Explicamos detalladamente para la primer alternativa, el Caribe, las valoraciones realizadas:</p>
@@ -597,15 +658,23 @@ no ASCII</code></pre>
 </section>
 <section id="método-promethee" class="level3">
 <h3 class="anchored" data-anchor-id="método-promethee">MÉTODO PROMETHEE</h3>
+<p>Vamos a usar la misma matriz de decisión ya explicada y los mismos pesos obtenidos por el método AHP. No osbtante, voy a aprovechar al máximo las ventajas de este método y voy a usar para cada criterio una función de preferencia distinta:</p>
+<p>Coste: Cuasi Criterio (q=1000)</p>
+<p>Organización: Criterio con preferencia lineal y área de indiferencia (q=1,p=2.5)</p>
+<p>Cultuta-Naturaleza: Criterio Nivel (q=0.5,p=2.5)</p>
+<p>Ocio: Criterio Nivel (q=1,p=2)</p>
+<p>Seguridad Sanitaria: Criterio Nivel (q=0.5,p=4)</p>
+<p>Seguridad Socio-Política: Criterio Nivel (q=0.5,p=4)</p>
+<p>Procedemos a introducir los datos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4000</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="co"># Caribe</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">500</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="co"># España</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2200</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="co"># India</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">3000</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="co"># Sudeste Asiático</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1800</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="co"># Crucero Islas Griegas</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1500</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">8</span> <span class="co"># Interrail</span></span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>), <span class="at">numalternativas =</span> <span class="dv">6</span>, <span class="at">numcriterios=</span><span class="dv">6</span>, <span class="at">v.nombresalt=</span><span class="fu">c</span>(<span class="st">'Caribe'</span>,<span class="st">'España'</span>,<span class="st">'India'</span>,<span class="st">'Sudeste Asiático'</span>,<span class="st">'Islas griegas'</span>,<span class="st">'Interrail'</span>), <span class="at">v.nombrescri=</span><span class="fu">c</span>(<span class="st">'Coste'</span>,<span class="st">'Organización'</span>,<span class="st">'Cultura-Naturaleza'</span>,<span class="st">'Ocio'</span>,<span class="st">'SeguridadSanitaria'</span>,<span class="st">'SeguridadSocioPolítica'</span>))</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>tab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">=</span> <span class="fu">multicriterio.crea.matrizdecision</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4000</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="co"># Caribe</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">500</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="co"># España</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2200</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="co"># India</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">3000</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="co"># Sudeste Asiático</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1800</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="co"># Crucero Islas Griegas</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">1500</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">8</span> <span class="co"># Interrail</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>), <span class="at">numalternativas =</span> <span class="dv">6</span>, <span class="at">numcriterios=</span><span class="dv">6</span>, <span class="at">v.nombresalt=</span><span class="fu">c</span>(<span class="st">'Caribe'</span>,<span class="st">'España'</span>,<span class="st">'India'</span>,<span class="st">'Sudeste Asiático'</span>,<span class="st">'Islas griegas'</span>,<span class="st">'Interrail'</span>), <span class="at">v.nombrescri=</span><span class="fu">c</span>(<span class="st">'Coste'</span>,<span class="st">'Organización'</span>,<span class="st">'Cultura-Naturaleza'</span>,<span class="st">'Ocio'</span>,<span class="st">'SeguridadSanitaria'</span>,<span class="st">'SeguridadSocioPolítica'</span>))</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>tab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Coste Organización Cultura-Naturaleza Ocio SeguridadSanitaria
 Caribe           -4000           -4                  2    5                  6
@@ -625,19 +694,19 @@ Interrail                             8</code></pre>
 </div>
 <p>Escribimos los pesos globales obtenidos en el método AHP:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pesos.criterios <span class="ot">=</span> pesos</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>tab.fpref <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1000</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">5</span>, <span class="dv">1</span>, <span class="fl">2.5</span>, <span class="dv">0</span>,</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>,<span class="fl">2.5</span>,<span class="dv">0</span>,</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>,</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>, <span class="dv">4</span>,<span class="dv">0</span>,</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>, <span class="dv">4</span>,<span class="dv">0</span>), <span class="at">ncol=</span><span class="dv">4</span>, <span class="at">byrow=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>pesos.criterios <span class="ot">=</span> pesos</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>tab.fpref <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1000</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">5</span>, <span class="dv">1</span>, <span class="fl">2.5</span>, <span class="dv">0</span>,</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>,<span class="fl">2.5</span>,<span class="dv">0</span>,</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>,</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>, <span class="dv">4</span>,<span class="dv">0</span>,</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">4</span>, <span class="fl">0.5</span>, <span class="dv">4</span>,<span class="dv">0</span>), <span class="at">ncol=</span><span class="dv">4</span>, <span class="at">byrow=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="método-promethee-i" class="level4">
 <h4 class="anchored" data-anchor-id="método-promethee-i">Método Promethee I</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>tab.Pthee.i <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_i</span>(tab, pesos.criterios, tab.fpref)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>tab.Pthee.i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>tab.Pthee.i <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_i</span>(tab, pesos.criterios, tab.fpref)</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>tab.Pthee.i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$tabla.indices
                     Caribe    España  India Sudeste Asiático Islas griegas
@@ -679,8 +748,8 @@ Interrail           1.0    0.0   1.0              1.0           1.0       0.5</c
 </div>
 <p>Resolvamos ahora el problema con Promethee Windows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>res_windows <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_windows</span>(tab,tab.fpref,pesos.criterios)</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>res_windows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>res_windows <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_windows</span>(tab,tab.fpref,pesos.criterios)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>res_windows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$Escenario
                        Criterio1     Criterio2    Criterio3   Criterio4  
@@ -728,8 +797,8 @@ Caribe               6 -0.5402  0.0852    0.6254</code></pre>
 </div>
 <p>También podemos hacerlo especificando si queremos maximizarlos o minimizarlos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">res=</span><span class="fu">multicriterio.metodo.promethee_windows</span>(tab,tab.fpref,pesos.criterios,</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">fminmax=</span><span class="fu">c</span>(<span class="st">"min"</span>,<span class="st">"min"</span>,<span class="st">"max"</span>,<span class="st">"max"</span>, <span class="st">"max"</span>,<span class="st">"max"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">res=</span><span class="fu">multicriterio.metodo.promethee_windows</span>(tab,tab.fpref,pesos.criterios,</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">fminmax=</span><span class="fu">c</span>(<span class="st">"min"</span>,<span class="st">"min"</span>,<span class="st">"max"</span>,<span class="st">"max"</span>, <span class="st">"max"</span>,<span class="st">"max"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$Escenario
                        Criterio1     Criterio2    Criterio3   Criterio4  
@@ -779,170 +848,10 @@ Caribe               6 -0.5402  0.0852    0.6254</code></pre>
 </div>
 <p>Impresión de los resultados de una forma más elegente:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>res_fin <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_windows_kableExtra</span>(res_windows)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>res_fin<span class="sc">$</span>tabEscenario</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="lightable-paper lightable-striped caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio1</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio2</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio3</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio4</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio5</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Criterio6</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd" data-grouplength="6">
-<td colspan="7" style="border-bottom: 1px solid"><strong>Preferencias</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Pesos</td>
-<td style="text-align: left;">0.388</td>
-<td style="text-align: left;">0.212</td>
-<td style="text-align: left;">0.212</td>
-<td style="text-align: left;">0.119</td>
-<td style="text-align: left;">0.0229999977</td>
-<td style="text-align: left;">0.0460000023</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Funciones Preferencias</td>
-<td style="text-align: left;">U-shape (2)</td>
-<td style="text-align: left;">Linear (5)</td>
-<td style="text-align: left;">Level (4)</td>
-<td style="text-align: left;">Level (4)</td>
-<td style="text-align: left;">Level (4)</td>
-<td style="text-align: left;">Level (4)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Q: Indiferencia</td>
-<td style="text-align: left;">1000</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">0.5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">P: Preferencia</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">2.5</td>
-<td style="text-align: left;">2.5</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">S: Gausiano</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Minimo</td>
-<td style="text-align: left;">-4000</td>
-<td style="text-align: left;">-4</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even" data-grouplength="4">
-<td colspan="7" style="border-bottom: 1px solid"><strong>Estadísticas</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Maximo</td>
-<td style="text-align: left;">-500</td>
-<td style="text-align: left;">-1</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">9</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Media</td>
-<td style="text-align: left;">-2166.67</td>
-<td style="text-align: left;">-2.17</td>
-<td style="text-align: left;">3.83</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">6.5</td>
-<td style="text-align: left;">5.67</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Desviacion Tipica</td>
-<td style="text-align: left;">1111.56</td>
-<td style="text-align: left;">1.07</td>
-<td style="text-align: left;">1.07</td>
-<td style="text-align: left;">1.26</td>
-<td style="text-align: left;">2.36</td>
-<td style="text-align: left;">2.56</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Caribe</td>
-<td style="text-align: left;">-4000</td>
-<td style="text-align: left;">-4</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">5</td>
-</tr>
-<tr class="odd" data-grouplength="5">
-<td colspan="7" style="border-bottom: 1px solid"><strong>Evaluaciones</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">España</td>
-<td style="text-align: left;">-500</td>
-<td style="text-align: left;">-3</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">India</td>
-<td style="text-align: left;">-2200</td>
-<td style="text-align: left;">-1</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Sudeste Asiático</td>
-<td style="text-align: left;">-3000</td>
-<td style="text-align: left;">-1</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Islas griegas</td>
-<td style="text-align: left;">-1800</td>
-<td style="text-align: left;">-2</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">Interrail</td>
-<td style="text-align: left;">-1500</td>
-<td style="text-align: left;">-2</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">8</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># res_fin = multicriterio.metodo.promethee_windows_kableExtra(res_windows)</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="co"># res_fin$tabEscenario</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p><img src="images/Captura%20de%20pantalla%202025-11-11%20115036.png" class="img-fluid"></p>
 </section>
 <section id="conclusión-2" class="level4">
 <h4 class="anchored" data-anchor-id="conclusión-2">CONCLUSIÓN</h4>
@@ -956,8 +865,8 @@ Caribe               6 -0.5402  0.0852    0.6254</code></pre>
 <section id="método-promethee-ii" class="level4">
 <h4 class="anchored" data-anchor-id="método-promethee-ii">Método Promethee II</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>tab.Pthee.ii <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_ii</span>(tab, pesos.criterios, tab.fpref)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>tab.Pthee.ii</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>tab.Pthee.ii <span class="ot">=</span> <span class="fu">multicriterio.metodo.promethee_ii</span>(tab, pesos.criterios, tab.fpref)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>tab.Pthee.ii</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$tabla.indices
                     Caribe    España  India Sudeste Asiático Islas griegas
@@ -992,7 +901,7 @@ Interrail           1.0    1.0   1.0              1.0           1.0       0.5</c
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(tab.Pthee.ii<span class="sc">$</span>vflujos.netos, <span class="at">decreasing=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(tab.Pthee.ii<span class="sc">$</span>vflujos.netos, <span class="at">decreasing=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6 2 5 3 4 1</code></pre>
 </div>
@@ -1009,8 +918,8 @@ Interrail           1.0    1.0   1.0              1.0           1.0       0.5</c
 <section id="método-axiomático-de-arrow-y-raymond" class="level3">
 <h3 class="anchored" data-anchor-id="método-axiomático-de-arrow-y-raymond">MÉTODO AXIOMÁTICO DE ARROW Y RAYMOND</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>sejarrow <span class="ot">=</span> <span class="fu">multicriterio.metodoaxiomatico.ArrowRaymond</span>(tab)</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>sejarrow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>sejarrow <span class="ot">=</span> <span class="fu">multicriterio.metodoaxiomatico.ArrowRaymond</span>(tab)</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>sejarrow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$pasos
 $pasos[[1]]
@@ -1119,7 +1028,7 @@ $alternativasordenadas
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>sejarrow<span class="sc">$</span>alternativasordenadas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>sejarrow<span class="sc">$</span>alternativasordenadas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Interrail"        "Islas griegas"    "España"           "India"           
 [5] "Sudeste Asiático" "Caribe"          </code></pre>
@@ -1135,15 +1044,15 @@ $alternativasordenadas
 <h4 class="anchored" data-anchor-id="análisis-paramétrico-o-de-sensibilidad-aplicación-método-axiomático-de-arrow-y-raymond">Análisis paramétrico o de sensibilidad aplicación Método axiomático de Arrow y Raymond</h4>
 <p>Estudiamos cómo cambian las ordenaciones de las alternativas si se incrementa un determinado porcentaje las valoraciones de la primera alternativa en todos los criterios:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>intalpha <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">0.1</span>)</span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>sols <span class="ot">=</span> <span class="fu">vector</span>(<span class="st">"list"</span>,<span class="fu">length</span>(intalpha))</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(intalpha)) {</span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>  tab_i <span class="ot">=</span> tab</span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  tab_i[<span class="dv">1</span>,] <span class="ot">=</span> tab_i[<span class="dv">1</span>,] <span class="sc">*</span> intalpha[i]</span>
-<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>  tab_i <span class="ot">=</span> <span class="fu">multicriterio.metodoaxiomatico.ArrowRaymond</span>(tab_i)</span>
-<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>  sols[[i]] <span class="ot">=</span> tab_i<span class="sc">$</span>alternativasordenadas</span>
-<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>sols</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>intalpha <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">0.1</span>)</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>sols <span class="ot">=</span> <span class="fu">vector</span>(<span class="st">"list"</span>,<span class="fu">length</span>(intalpha))</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(intalpha)) {</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>  tab_i <span class="ot">=</span> tab</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>  tab_i[<span class="dv">1</span>,] <span class="ot">=</span> tab_i[<span class="dv">1</span>,] <span class="sc">*</span> intalpha[i]</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>  tab_i <span class="ot">=</span> <span class="fu">multicriterio.metodoaxiomatico.ArrowRaymond</span>(tab_i)</span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>  sols[[i]] <span class="ot">=</span> tab_i<span class="sc">$</span>alternativasordenadas</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>sols</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] "Interrail"        "Islas griegas"    "España"           "India"           
@@ -1189,22 +1098,22 @@ $alternativasordenadas
 [1] "Caribe"           "Interrail"        "Islas griegas"    "España"          
 [5] "India"            "Sudeste Asiático"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ¿Qué posiciones ha tenido "a1" para los distintos valores de alfa?</span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>posiciones_a1 <span class="ot">=</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(intalpha))</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(intalpha)) {</span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>  posiciones_a1[i] <span class="ot">=</span> <span class="fu">which</span>(sols[[i]]<span class="sc">==</span><span class="st">"Caribe"</span>)</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>posiciones_a1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ¿Qué posiciones ha tenido "a1" para los distintos valores de alfa?</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>posiciones_a1 <span class="ot">=</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="fu">length</span>(intalpha))</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(intalpha)) {</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  posiciones_a1[i] <span class="ot">=</span> <span class="fu">which</span>(sols[[i]]<span class="sc">==</span><span class="st">"Caribe"</span>)</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>posiciones_a1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 6 6 6 6 6 6 6 6 3 3 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a> <span class="do">## [1] 6 6 6 6 6 6 6 6 3 3 1</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Representar gráficamente estos cambios:</span></span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(intalpha,posiciones_a1,<span class="at">type=</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a> <span class="do">## [1] 6 6 6 6 6 6 6 6 3 3 1</span></span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Representar gráficamente estos cambios:</span></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(intalpha,posiciones_a1,<span class="at">type=</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="trabajo02_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="trabajo02_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1220,8 +1129,9 @@ $alternativasordenadas
 </section>
 <section id="conclusión-final" class="level3">
 <h3 class="anchored" data-anchor-id="conclusión-final">CONCLUSIÓN FINAL</h3>
-<p>Interrail es la alternativa que emerge como más robusta frente a múltiples métodos de decisión estudiados, siendo señalada como la mejor opción en tres de los cuatro métodos aplicados (ELECTRE, PROMETHEE II y Arrow-Raymond).</p>
-<p>Por otro lado, España constituye una opción muy competitiva y estable, situándose frecuentemente entre las primeras posiciones y especialmente destacando bajo el AHP y el método PROMETHEE I.</p>
+<p>Tras aplicar y comparar los distintos métodos de decisión multicriterio, <strong>Interrail</strong> se destaca como la alternativa más robusta y consistente, resultando la mejor opción en tres de los cuatro métodos analizados: ELECTRE, PROMETHEE II y Arrow-Raymond. Su desempeño equilibrado en los diferentes criterios lo posiciona como la opción más sólida para el viaje de fin de carrera.</p>
+<p>Por su parte, España se mantiene como una alternativa altamente competitiva y estable, ocupando frecuentemente los primeros lugares, especialmente según los resultados obtenidos con AHP y PROMETHEE I. Esto refleja que, aunque Interrail es la opción más recomendada, España sigue siendo una elección atractiva.</p>
+<p>En conclusión, considerando el análisis de los criterios económicos, organizativos, culturales, de ocio y de seguridad, la alternativa recomendada para el viaje de fin de carrera de este año es Interrail.</p>
 </section>
 
 </main>

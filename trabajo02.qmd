@@ -580,6 +580,8 @@ Impresión de los resultados de una forma más elegente:
 # res_fin$tabEscenario
 ```
 
+![](images/Captura de pantalla 2025-11-11 115036.png)
+
 #### CONCLUSIÓN
 
 Tras aplicar el **método PROMETHEE I**, se observa que la alternativa **España** presenta el flujo entrante más alto, mientras que el flujo saliente más bajo corresponde a **Interrail**. Esto implica que Interrail es preferida frente a todas las demás alternativas, salvo España, con la cual resulta incomparable, dado que ambas muestran un equilibrio entre sus capacidades de dominar y ser dominadas.
